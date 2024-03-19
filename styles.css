@@ -1,21 +1,52 @@
-/* styles.css */
-
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Center the content horizontally and vertically */
+body, .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333; /* Dark grey background color */
+    color: white; /* White text color */
 }
 
+.container {
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Style the heading */
 h1 {
-  transition: opacity 0.9s ease; /* Smooth transition for opacity change */
+    font-style: italic;
+    font-size: 48px; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin */
 }
 
-h1:hover {
-  animation: fade 1.4s ease forwards; /* Apply the fade animation on hover */
+/* Style the text below the heading */
+p {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #ddd; /* Light grey text color */
+    margin: 10px 0; /* Add some margin for spacing */
+    opacity: 1; /* Ensure initial opacity is 1 */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+}
+
+/* Apply the fade animation on hover for each text */
+#depop:hover {
+    animation: fadeDepop 1s ease forwards;
+}
+
+#tiktok:hover {
+    animation: fadeTikTok 1.5s ease forwards;
+}
+
+/* Keyframes for fade animation */
+@keyframes fadeDepop {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeTikTok {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
