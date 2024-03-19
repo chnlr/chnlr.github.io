@@ -32,12 +32,22 @@
             opacity: 1;
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
         }
+
+        /* Style the separator */
+        .separator {
+            color: #777; /* Darker grey text color */
+            font-size: 24px;
+            margin: 0 10px; /* Adjust spacing */
+        }
     </style>
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
-    <p id="depop">Depop</p>
-    <p id="tiktok">TikTok</p>
+    <div>
+        <p id="depop">Depop</p>
+        <span class="separator">|</span>
+        <p id="tiktok">TikTok</p>
+    </div>
 
     <script>
         // JavaScript code for fade effect
