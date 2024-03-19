@@ -25,7 +25,7 @@
         }
 
         /* Style the text below the heading */
-        p {
+        .links {
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
             margin: 10px;
@@ -43,13 +43,15 @@
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
-    <div>
-        <p id="depop">Depop</p><span class="separator">|</span><p id="tiktok">TikTok</p>
+    <div class="links">
+        <span id="depop">Depop</span>
+        <span class="separator">|</span>
+        <span id="tiktok">TikTok</span>
     </div>
 
     <script>
         // JavaScript code for fade effect
-        const textElements = document.querySelectorAll('p');
+        const textElements = document.querySelectorAll('.links span');
 
         textElements.forEach(element => {
             element.addEventListener('mouseenter', () => {
