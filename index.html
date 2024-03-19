@@ -1,12 +1,9 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHAHANLER</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
     <style>
         /* Center the heading horizontally */
         body {
@@ -26,6 +23,25 @@
     </style>
 </head>
 <body>
-    <h1>CHAHANLER</h1>
+    <h1 id="chahanler">CHAHANLER</h1>
+
+    <!-- JavaScript code embedded directly within the HTML file -->
+    <script>
+        var chahanler = document.getElementById("chahanler");
+
+        // Function to fade the heading on mouseover
+        function fadeOut() {
+            chahanler.style.opacity = 0.5; // Set opacity to 50%
+        }
+
+        // Function to restore the heading's opacity on mouseout
+        function fadeIn() {
+            chahanler.style.opacity = 1; // Restore opacity to 100%
+        }
+
+        // Event listeners to trigger the fade effect
+        chahanler.addEventListener("mouseover", fadeOut);
+        chahanler.addEventListener("mouseout", fadeIn);
+    </script>
 </body>
 </html>
