@@ -57,3 +57,14 @@ p {
     50% { opacity: 0.5; }
     100% { opacity: 1; }
 }
+
+/* Spin animation for separator */
+.separator:hover {
+    animation: spin 1s linear infinite; /* Spin animation on hover */
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg); /* Rotate 360 degrees */
+    }
+}
