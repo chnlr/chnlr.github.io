@@ -1,14 +1,21 @@
 /* styles.css */
 
 @keyframes fade {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  50% {
     opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
+h1 {
+  transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
 h1:hover {
-  animation: fade 0.3s ease forwards;
+  animation: fade 0.5s ease forwards; /* Apply the fade animation on hover */
 }
