@@ -13,9 +13,9 @@
 }
 
 h1 {
-  transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+  transition: opacity 0.9s ease; /* Smooth transition for opacity change */
 }
 
 h1:hover {
-  animation: fade 0.5s ease forwards; /* Apply the fade animation on hover */
+  animation: fade 1.4s ease forwards; /* Apply the fade animation on hover */
 }
