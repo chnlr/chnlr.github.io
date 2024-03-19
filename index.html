@@ -35,15 +35,21 @@
         }
 
         /* Style the links and separator */
-        .links span {
-            display: inline-block; /* Display elements as blocks */
-            margin: 0 5px; /* Adjust spacing */
+        .links a {
+            color: inherit; /* Inherit color from parent */
+            text-decoration: none; /* Remove default underline */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
         }
 
         /* Style the separator */
         .separator {
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
+        }
+
+        /* Style links on hover */
+        .links a:hover {
+            opacity: 0.5; /* Reduce opacity on hover */
         }
     </style>
 </head>
