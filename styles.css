@@ -1,5 +1,5 @@
 /* Center the content horizontally */
-body, .container {
+body {
     display: flex;
     justify-content: center;
     align-items: center; /* Center vertically */
@@ -9,7 +9,7 @@ body, .container {
 }
 
 /* Stack elements vertically */
-.container {
+body {
     flex-direction: column;
     padding-top: 50px; /* Add padding from the top */
 }
@@ -21,19 +21,19 @@ h1 {
     margin: 0;
 }
 
-/* Container for the text elements */
-.text-container {
-    display: flex; /* Display elements side by side */
-    align-items: center; /* Center horizontally */
-}
-
 /* Style the text below the heading */
-p {
-    font-size: 24px;
+.links span {
+    font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
     margin: 10px;
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+}
+
+/* Style the separator */
+.separator {
+    font-size: 18px; /* Smaller font size */
+    color: #777; /* Darker grey text color */
 }
 
 /* Apply the fade animation on hover for each text */
