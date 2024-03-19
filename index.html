@@ -6,20 +6,13 @@
     <title>CHAHANLER</title>
     <style>
         /* Center the content horizontally */
-        body, .container {
+        body {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
             background-color: #333; /* Dark grey background color */
             color: white; /* White text color */
-        }
-
-        /* Stack elements vertically */
-        .container {
-            flex-direction: column;
-            padding-top: 50px; /* Add padding from the top */
+            margin: 0;
+            padding-top: 50px; /* Center content vertically */
         }
 
         /* Style the heading */
@@ -27,6 +20,7 @@
             font-style: italic;
             font-size: 48px;
             margin: 0;
+            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
         }
 
         /* Container for the text elements */
@@ -45,12 +39,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>CHAHANLER</h1>
-        <div class="text-container">
-            <p id="depop">Depop</p>
-            <p id="tiktok">TikTok</p>
-        </div>
+    <h1 id="chahanler">CHAHANLER</h1>
+    <div class="text-container">
+        <p id="depop">Depop</p>
+        <p id="tiktok">TikTok</p>
     </div>
 
     <script>
@@ -65,6 +57,17 @@
             element.addEventListener('mouseleave', () => {
                 element.style.opacity = '1'; // Restore opacity on mouseleave
             });
+        });
+
+        // Fade effect for "CHAHANLER"
+        const chahanler = document.getElementById('chahanler');
+
+        chahanler.addEventListener('mouseenter', () => {
+            chahanler.style.opacity = '0.5'; // Reduce opacity on mouseenter
+        });
+
+        chahanler.addEventListener('mouseleave', () => {
+            chahanler.style.opacity = '1'; // Restore opacity on mouseleave
         });
     </script>
 </body>
