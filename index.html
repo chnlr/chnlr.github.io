@@ -8,7 +8,8 @@
         /* Center the content horizontally */
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             background-color: #333; /* Dark grey background color */
             color: white; /* White text color */
             margin: 0;
@@ -23,11 +24,6 @@
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
         }
 
-        /* Container for the text elements */
-        .text-container {
-            display: flex; /* Display elements side by side */
-        }
-
         /* Style the text below the heading */
         p {
             font-size: 24px;
@@ -40,10 +36,8 @@
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
-    <div class="text-container">
-        <p id="depop">Depop</p>
-        <p id="tiktok">TikTok</p>
-    </div>
+    <p id="depop">Depop</p>
+    <p id="tiktok">TikTok</p>
 
     <script>
         // JavaScript code for fade effect
