@@ -2,6 +2,7 @@
 body, .container {
     display: flex;
     justify-content: center;
+    align-items: center; /* Center vertically */
     margin: 0;
     background-color: #333; /* Dark grey background color */
     color: white; /* White text color */
@@ -10,7 +11,6 @@ body, .container {
 /* Stack elements vertically */
 .container {
     flex-direction: column;
-    align-items: center; /* Center elements horizontally */
     padding-top: 50px; /* Add padding from the top */
 }
 
@@ -24,6 +24,7 @@ h1 {
 /* Container for the text elements */
 .text-container {
     display: flex; /* Display elements side by side */
+    align-items: center; /* Center horizontally */
 }
 
 /* Style the text below the heading */
