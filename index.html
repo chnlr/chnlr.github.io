@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHAHANLER</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
     <style>
         /* Center the content horizontally */
         body, .container {
             display: flex;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
             background-color: #333; /* Dark grey background color */
             color: white; /* White text color */
@@ -18,7 +19,6 @@
         /* Stack elements vertically */
         .container {
             flex-direction: column;
-            align-items: center; /* Center elements horizontally */
             padding-top: 50px; /* Add padding from the top */
         }
 
@@ -42,28 +42,6 @@
             opacity: 1;
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
         }
-
-        /* Apply the fade animation on hover for each text */
-        #depop:hover {
-            animation: fadeDepop 1s ease forwards;
-        }
-
-        #tiktok:hover {
-            animation: fadeTikTok 1.5s ease forwards;
-        }
-
-        /* Keyframes for fade animation */
-        @keyframes fadeDepop {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes fadeTikTok {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
     </style>
 </head>
 <body>
@@ -74,5 +52,20 @@
             <p id="tiktok">TikTok</p>
         </div>
     </div>
+
+    <script>
+        // JavaScript code for fade effect
+        const textElements = document.querySelectorAll('p');
+
+        textElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                element.style.opacity = '0.5'; // Reduce opacity on mouseenter
+            });
+
+            element.addEventListener('mouseleave', () => {
+                element.style.opacity = '1'; // Restore opacity on mouseleave
+            });
+        });
+    </script>
 </body>
 </html>
