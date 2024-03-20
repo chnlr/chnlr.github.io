@@ -59,18 +59,12 @@
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
             display: inline-block; /* Ensure the separator is inline with the text */
-            transform-origin: center; /* Set the transform origin to the center of the separator */
+            transition: transform 0.5s ease; /* Smooth transition for transform change */
         }
 
         /* Style links on hover */
         .links a:hover {
             opacity: 0.5; /* Reduce opacity on hover */
-        }
-
-        /* Define smooth spin animation */
-        @keyframes smoothSpin {
-            0% { transform: rotate(0deg); } /* Rotate from 0 degrees */
-            100% { transform: rotate(180deg); } /* Rotate to 180 degrees */
         }
     </style>
 </head>
@@ -86,17 +80,8 @@
         // JavaScript function to add spinning animation to the separator
         function spinSeparator() {
             var separator = document.getElementById('separator');
-            // Check if the separator already has the rotated class
-            if (separator.classList.contains('rotated')) {
-                // Remove the rotated class and apply the smooth spin animation to rotate another 180 degrees
-                separator.classList.remove('rotated');
-                separator.style.animation = 'smoothSpin 1s ease-in-out forwards';
-            } else {
-                // Apply the smooth spin animation to rotate 180 degrees
-                separator.style.animation = 'smoothSpin 1s ease-in-out forwards';
-            }
-            // Add the rotated class to the separator
-            separator.classList.add('rotated');
+            // Toggle the rotation of the separator by adding or removing the 'rotated' class
+            separator.classList.toggle('rotated');
         }
     </script>
 </body>
