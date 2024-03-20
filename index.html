@@ -65,8 +65,8 @@
             opacity: 0.5; /* Reduce opacity on hover */
         }
 
-        /* Style the "Depop" image */
-        .depops-image {
+        /* Style the "Depop" and "TikTok" images */
+        .link-image {
             width: 200px; /* Adjust the size as needed */
             height: auto; /* Maintain aspect ratio */
             transition: transform 0.5s ease; /* Smooth transition for transform change */
@@ -77,31 +77,49 @@
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
         <!-- Display the regular "Depop" image -->
-        <img id="depops-image" class="depops-image" src="depops still.png" alt="Depop">
+        <img id="depops-image" class="link-image" src="depops still.png" alt="Depop">
         <span class="separator">|</span>
-        <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
+        <!-- Display the regular "TikTok" image -->
+        <img id="tiktok-image" class="link-image" src="tiktok still.png" alt="TikTok">
     </div>
 
     <script>
         const depopsImage = document.getElementById('depops-image');
-        let isHovered = false;
+        const tiktokImage = document.getElementById('tiktok-image');
+        let depopsHovered = false;
+        let tiktokHovered = false;
 
         // Function to change the image source to the animated GIF
-        function playGif() {
-            depopsImage.src = 'depops wiggle.gif';
-            isHovered = true;
+        function playGif(element) {
+            if (element === 'depops') {
+                depopsImage.src = 'depops wiggle.gif';
+                depopsHovered = true;
+            } else if (element === 'tiktok') {
+                tiktokImage.src = 'tiktok wiggle.gif';
+                tiktokHovered = true;
+            }
         }
 
         // Function to change the image source back to the static image
-        function stopGif() {
-            if (!isHovered) return; // Prevents from stopping the GIF if the mouse moves away before it starts playing
-            depopsImage.src = 'depops still.png';
-            isHovered = false;
+        function stopGif(element) {
+            if (element === 'depops') {
+                if (!depopsHovered) return; // Prevents from stopping the GIF if the mouse moves away before it starts playing
+                depopsImage.src = 'depops still.png';
+                depopsHovered = false;
+            } else if (element === 'tiktok') {
+                if (!tiktokHovered) return; // Prevents from stopping the GIF if the mouse moves away before it starts playing
+                tiktokImage.src = 'tiktok still.png';
+                tiktokHovered = false;
+            }
         }
 
-        // Event listeners to play and stop the GIF on hover
-        depopsImage.addEventListener('mouseover', playGif);
-        depopsImage.addEventListener('mouseout', stopGif);
+        // Event listeners to play and stop the GIF on hover for "Depop" link
+        depopsImage.addEventListener('mouseover', () => playGif('depops'));
+        depopsImage.addEventListener('mouseout', () => stopGif('depops'));
+
+        // Event listeners to play and stop the GIF on hover for "TikTok" link
+        tiktokImage.addEventListener('mouseover', () => playGif('tiktok'));
+        tiktokImage.addEventListener('mouseout', () => stopGif('tiktok'));
     </script>
 </body>
 </html>
