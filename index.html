@@ -67,9 +67,9 @@
             opacity: 0.5; /* Reduce opacity on hover */
         }
 
-        /* Rotate the separator */
-        .rotated {
-            transform: rotateY(180deg); /* Rotate the separator 180 degrees on the Y-axis */
+        /* Add class for rotating the separator */
+        .rotate {
+            transform: rotateY(180deg); /* Rotate the separator horizontally by 180 degrees */
         }
     </style>
 </head>
@@ -85,8 +85,12 @@
         // JavaScript function to add spinning animation to the separator
         function spinSeparator() {
             var separator = document.getElementById('separator');
-            // Toggle the 'rotated' class to spin the separator
-            separator.classList.toggle('rotated');
+            // Add the 'rotate' class to rotate the separator
+            separator.classList.add('rotate');
+            // Remove the 'rotate' class after a delay to allow the animation to complete
+            setTimeout(function() {
+                separator.classList.remove('rotate');
+            }, 500); // Adjust the delay to match the transition duration
         }
     </script>
 </body>
