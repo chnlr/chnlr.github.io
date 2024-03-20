@@ -22,8 +22,7 @@
             margin: 0;
             padding-top: 50px; /* Center content vertically */
             font-family: 'Daydream', monospace; /* Apply custom font family */
-            cursor: url('hoata.ani'), auto;
-}
+        }
 
         /* Style the heading */
         h1 {
@@ -59,6 +58,7 @@
         .separator {
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
+            animation: spin 2s linear infinite; /* Apply spin animation */
         }
 
         /* Style links on hover */
@@ -66,14 +66,10 @@
             opacity: 0.5; /* Reduce opacity on hover */
         }
 
-        /* Media query for smaller screens */
-        @media only screen and (max-width: 600px) {
-            h1 {
-                font-size: 36px; /* Decrease font size for smaller screens */
-            }
-            .links {
-                font-size: 14px; /* Decrease font size for smaller screens */
-            }
+        /* Define spin animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); } /* Rotate from 0 degrees */
+            100% { transform: rotate(360deg); } /* Rotate to 360 degrees */
         }
     </style>
 </head>
