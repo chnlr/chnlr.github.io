@@ -65,21 +65,26 @@
             opacity: 0.5; /* Reduce opacity on hover */
         }
 
-        /* Media query for smaller screens */
-        @media only screen and (max-width: 600px) {
-            h1 {
-                font-size: 36px; /* Decrease font size for smaller screens */
+        /* Define the keyframes for the spin animation */
+        @keyframes spin {
+            from {
+                transform: rotateZ(0deg); /* Start with no rotation */
             }
-            .links {
-                font-size: 14px; /* Decrease font size for smaller screens */
+            to {
+                transform: rotateZ(360deg); /* End with 360 degrees of rotation */
             }
+        }
+
+        /* Apply the spin animation to the text */
+        .spin-on-hover {
+            animation: spin 2s linear infinite; /* Spin the text continuously */
         }
     </style>
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
-        <a id="depop" href="http://depop.com/chanlr" target="_blank">Depop</a>
+        <a id="depop" href="http://depop.com/chanlr" target="_blank" class="spin-on-hover">Depop</a>
         <span class="separator">|</span>
         <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
     </div>
