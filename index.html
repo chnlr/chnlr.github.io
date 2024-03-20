@@ -15,6 +15,7 @@
             color: white; /* White text color */
             margin: 0;
             padding-top: 50px; /* Center content vertically */
+            position: relative; /* Make the body the positioning context */
         }
 
         /* Style the heading */
@@ -25,66 +26,69 @@
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
         }
 
-        /* Style the text below the heading */
-        .links {
-            font-size: 18px; /* Smaller font size */
-            color: #777; /* Darker grey text color */
-            margin: 10px;
-            opacity: 1;
-            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+        /* Style the particle animation */
+        .particles {
+            position: absolute; /* Position particles relative to the body */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Ignore pointer events */
+            z-index: -1; /* Place particles behind other content */
         }
 
-        /* Style the links and separator */
-        .links a {
-            color: inherit; /* Inherit color from parent */
-            text-decoration: none; /* Remove default underline */
-            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
-        }
-
-        /* Style the separator */
-        .separator {
-            font-size: 18px; /* Smaller font size */
-            color: #777; /* Darker grey text color */
-        }
-
-        /* Style links on hover */
-        .links a:hover {
-            opacity: 0.5; /* Reduce opacity on hover */
+        /* Style the individual particle */
+        .particle {
+            position: absolute; /* Position particles absolutely */
+            background-color: #fff; /* White color for particles */
+            border-radius: 50%; /* Round particles */
+            pointer-events: none; /* Ignore pointer events */
+            z-index: -1; /* Place particles behind other content */
         }
     </style>
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
-    <div class="links">
-        <a id="depop" href="http://depop.com/chanlr" target="_blank">Depop</a>
-        <span class="separator">|</span>
-        <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
-    </div>
+
+    <!-- Particle animation container -->
+    <div class="particles"></div>
 
     <script>
-        // JavaScript code for fade effect
-        const textElements = document.querySelectorAll('.links span');
+        // Function to create particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
 
-        textElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                element.style.opacity = '0.5'; // Reduce opacity on mouseenter
+            // Set random position for the particle
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+
+            // Set random size for the particle
+            const size = Math.random() * 4 + 1; // Random size between 1 and 5 pixels
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+
+            // Append the particle to the container
+            document.querySelector('.particles').appendChild(particle);
+
+            // Animation to move the particle
+            particle.animate([
+                { transform: 'translate(0, 0)' },
+                { transform: `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)` } // Random movement
+            ], {
+                duration: Math.random() * 3000 + 2000, // Random duration between 2000ms and 5000ms
+                iterations: Infinity, // Repeat the animation infinitely
+                direction: 'alternate', // Reverse direction after each iteration
+                easing: 'ease-in-out' // Smooth easing
             });
+        }
 
-            element.addEventListener('mouseleave', () => {
-                element.style.opacity = '1'; // Restore opacity on mouseleave
-            });
-        });
-
-        // Fade effect for "CHAHANLER"
-        const chahanler = document.getElementById('chahanler');
-
-        chahanler.addEventListener('mouseenter', () => {
-            chahanler.style.opacity = '0.5'; // Reduce opacity on mouseenter
-        });
-
-        chahanler.addEventListener('mouseleave', () => {
-            chahanler.style.opacity = '1'; // Restore opacity on mouseleave
-        });
+        // Create particles
+        for (let i = 0; i < 50; i++) {
+            createParticle();
+        }
     </script>
 </body>
 </html>
