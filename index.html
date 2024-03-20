@@ -58,7 +58,6 @@
         .separator {
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
-            animation: spin 2s linear infinite; /* Apply spin animation */
             display: inline-block; /* Ensure the separator is inline with the text */
         }
 
@@ -69,16 +68,27 @@
 
         /* Define spin animation */
         @keyframes spin {
-            100% { transform: rotate(360deg); } /* Rotate to 360 degrees */
+            100% { transform: rotate(180deg); } /* Rotate to 180 degrees */
         }
     </style>
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
-        <a id="depop" href="http://depop.com/chanlr" target="_blank">Depop</a>
-        <span class="separator">|</span>
-        <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
+        <a id="depop" href="http://depop.com/chanlr" target="_blank" onmouseover="spinSeparator()">Depop</a>
+        <span class="separator" id="separator">|</span>
+        <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank" onmouseover="spinSeparator()">TikTok</a>
     </div>
+
+    <script>
+        // JavaScript function to add spinning animation to the separator
+        function spinSeparator() {
+            var separator = document.getElementById('separator');
+            separator.style.animation = 'spin 1s ease-in-out'; // Apply spin animation
+            setTimeout(function() {
+                separator.style.animation = ''; // Remove animation after it completes
+            }, 1000); // Adjust the duration of the animation (1s = 1000ms)
+        }
+    </script>
 </body>
 </html>
