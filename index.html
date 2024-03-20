@@ -45,6 +45,23 @@
             pointer-events: none; /* Ignore pointer events */
             z-index: -1; /* Place particles behind other content */
         }
+
+        /* Style the links */
+        .links {
+            font-size: 18px; /* Smaller font size */
+            color: #777; /* Darker grey text color */
+            margin: 10px;
+        }
+
+        /* Style links on hover */
+        .links a:hover {
+            opacity: 0.5; /* Reduce opacity on hover */
+        }
+
+        /* Style the separator */
+        .separator {
+            margin: 0 5px; /* Adjust spacing */
+        }
     </style>
 </head>
 <body>
@@ -52,6 +69,13 @@
 
     <!-- Particle animation container -->
     <div class="particles"></div>
+
+    <!-- Links -->
+    <div class="links">
+        <a id="depop" href="http://depop.com/chanlr" target="_blank">Depop</a>
+        <span class="separator">|</span>
+        <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
+    </div>
 
     <script>
         // Function to create particles
@@ -89,6 +113,30 @@
         for (let i = 0; i < 50; i++) {
             createParticle();
         }
+
+        // JavaScript code for fade effect
+        const textElements = document.querySelectorAll('.links span');
+
+        textElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                element.style.opacity = '0.5'; // Reduce opacity on mouseenter
+            });
+
+            element.addEventListener('mouseleave', () => {
+                element.style.opacity = '1'; // Restore opacity on mouseleave
+            });
+        });
+
+        // Fade effect for "CHAHANLER"
+        const chahanler = document.getElementById('chahanler');
+
+        chahanler.addEventListener('mouseenter', () => {
+            chahanler.style.opacity = '0.5'; // Reduce opacity on mouseenter
+        });
+
+        chahanler.addEventListener('mouseleave', () => {
+            chahanler.style.opacity = '1'; // Restore opacity on mouseleave
+        });
     </script>
 </body>
 </html>
