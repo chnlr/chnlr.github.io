@@ -7,10 +7,10 @@
     <title>｡+.｡☆ﾟ:;｡+ﾟ ☆*ﾟ¨ﾟﾟ･*:..ﾞ</title>
     <style>
         /* Importing and using custom font */
-@font-face {
-    font-family: 'Daydream'; /* Name of the custom font family */
-    src: url('Daydream.ttf') format('truetype'); /* URL to the font file and its format */
-}
+        @font-face {
+            font-family: 'Daydream'; /* Name of the custom font family */
+            src: url('Daydream.ttf') format('truetype'); /* URL to the font file and its format */
+        }
 
         /* Center the content horizontally */
         body {
@@ -63,6 +63,16 @@
         /* Style links on hover */
         .links a:hover {
             opacity: 0.5; /* Reduce opacity on hover */
+        }
+
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 36px; /* Decrease font size for smaller screens */
+            }
+            .links {
+                font-size: 14px; /* Decrease font size for smaller screens */
+            }
         }
     </style>
 </head>
