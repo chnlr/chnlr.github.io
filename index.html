@@ -71,20 +71,37 @@
             height: auto; /* Maintain aspect ratio */
             transition: transform 0.5s ease; /* Smooth transition for transform change */
         }
-
-        /* Change image source on hover */
-        .depop-image:hover {
-            content: url('depop wiggle.gif'); /* Change the image source on hover */
-        }
     </style>
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
         <!-- Display the regular "Depop" image -->
-        <img class="depop-image" src="depop still.png" alt="Depop">
+        <img id="depop-image" class="depop-image" src="depop still.png" alt="Depop">
         <span class="separator">|</span>
         <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
     </div>
+
+    <script>
+        const depopImage = document.getElementById('depop-image');
+        let isHovered = false;
+
+        // Function to change the image source to the animated GIF
+        function playGif() {
+            depopImage.src = 'depop wiggle.gif';
+            isHovered = true;
+        }
+
+        // Function to change the image source back to the static image
+        function stopGif() {
+            if (!isHovered) return; // Prevents from stopping the GIF if the mouse moves away before it starts playing
+            depopImage.src = 'depop still.png';
+            isHovered = false;
+        }
+
+        // Event listeners to play and stop the GIF on hover
+        depopImage.addEventListener('mouseover', playGif);
+        depopImage.addEventListener('mouseout', stopGif);
+    </script>
 </body>
 </html>
