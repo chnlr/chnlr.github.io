@@ -65,19 +65,25 @@
             opacity: 0.5; /* Reduce opacity on hover */
         }
 
-        /* Define the keyframes for the spin animation */
+        /* Spin animation */
+        .spin-on-hover:hover {
+            animation: spin 1s infinite linear; /* Spin animation */
+        }
+
         @keyframes spin {
-            from {
-                transform: rotateZ(0deg); /* Start with no rotation */
-            }
-            to {
-                transform: rotateZ(360deg); /* End with 360 degrees of rotation */
+            100% {
+                transform: rotate(360deg); /* Rotate 360 degrees */
             }
         }
 
-        /* Apply the spin animation to the text */
-        .spin-on-hover {
-            animation: spin 2s linear infinite; /* Spin the text continuously */
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 36px; /* Decrease font size for smaller screens */
+            }
+            .links {
+                font-size: 14px; /* Decrease font size for smaller screens */
+            }
         }
     </style>
 </head>
