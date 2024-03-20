@@ -22,7 +22,6 @@
             margin: 0;
             padding-top: 50px; /* Center content vertically */
             font-family: 'Daydream', monospace; /* Apply custom font family */
-            position: relative; /* Ensure relative positioning for child elements */
         }
 
         /* Style the heading */
@@ -46,7 +45,8 @@
             margin: 30px;
             opacity: 1;
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
-            position: relative; /* Ensure relative positioning for child elements */
+            display: flex;
+            align-items: center; /* Align items vertically */
         }
 
         /* Style the links and separator */
@@ -54,17 +54,13 @@
             color: inherit; /* Inherit color from parent */
             text-decoration: none; /* Remove default underline */
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
-            position: absolute; /* Position the links absolutely */
+            margin: 0 10px; /* Add spacing between links */
         }
 
         /* Style the separator */
         .separator {
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
-            position: absolute; /* Position the separator absolutely */
-            top: 0; /* Align the separator to the top */
-            left: 50%; /* Align the separator to the center */
-            transform: translateX(-50%); /* Center the separator horizontally */
         }
 
         /* Style links on hover */
@@ -73,20 +69,11 @@
         }
 
         /* Style the "Depop" and "TikTok" images */
-        .link-image {
+        .depops-image,
+        .tiktok-image {
             width: 200px; /* Adjust the size as needed */
             height: auto; /* Maintain aspect ratio */
-            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
-            position: absolute; /* Position the images absolutely */
-            top: 50%; /* Align the images to the center vertically */
-            left: 50%; /* Align the images to the center horizontally */
-            transform: translate(-50%, -50%); /* Center the images */
-            pointer-events: none; /* Prevent images from being clickable */
-        }
-
-        /* Hide the GIF images by default */
-        .link-image.gif {
-            display: none;
+            transition: transform 0.5s ease; /* Smooth transition for transform change */
         }
     </style>
 </head>
@@ -94,11 +81,10 @@
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
         <!-- Display the regular "Depop" image -->
-        <img id="depops-image" class="link-image" src="depops still.png" alt="Depop">
+        <img id="depops-image" class="depops-image" src="depops still.png" alt="Depop">
         <span class="separator">|</span>
-        <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
         <!-- Display the regular "TikTok" image -->
-        <img id="tiktok-image" class="link-image" src="tiktok still.png" alt="TikTok">
+        <img id="tiktok-image" class="tiktok-image" src="tiktok still.png" alt="TikTok">
     </div>
 
     <script>
@@ -107,18 +93,19 @@
 
         // Function to change the image source to the animated GIF
         function playGif(image) {
-            image.src = image.getAttribute('data-gif');
+            image.src = image.src.replace(' still.png', ' wiggle.gif');
         }
 
         // Function to change the image source back to the static image
         function stopGif(image) {
-            image.src = image.getAttribute('data-png');
+            image.src = image.src.replace(' wiggle.gif', ' still.png');
         }
 
-        // Event listeners to play and stop the GIF on hover
+        // Event listeners to play and stop the GIF on hover for Depop
         depopsImage.addEventListener('mouseover', () => playGif(depopsImage));
         depopsImage.addEventListener('mouseout', () => stopGif(depopsImage));
 
+        // Event listeners to play and stop the GIF on hover for TikTok
         tiktokImage.addEventListener('mouseover', () => playGif(tiktokImage));
         tiktokImage.addEventListener('mouseout', () => stopGif(tiktokImage));
     </script>
