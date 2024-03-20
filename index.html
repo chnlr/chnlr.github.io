@@ -7,10 +7,10 @@
     <title>｡+.｡☆ﾟ:;｡+ﾟ ☆*ﾟ¨ﾟﾟ･*:..ﾞ</title>
     <style>
         /* Importing and using custom font */
-@font-face {
-    font-family: 'Daydream'; /* Name of the custom font family */
-    src: url('Daydream.ttf') format('truetype'); /* URL to the font file and its format */
-}
+        @font-face {
+            font-family: 'Daydream'; /* Name of the custom font family */
+            src: url('Daydream.ttf') format('truetype'); /* URL to the font file and its format */
+        }
 
         /* Center the content horizontally */
         body {
@@ -29,13 +29,26 @@
             font-style: italic;
             font-size: 48px;
             margin: 0;
-            transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
             cursor: pointer; /* Change cursor to pointer on hover */
+            position: relative; /* Make sure it's positioned relative for the absolutely positioned glow */
         }
 
-        /* Glow effect on hover */
+        /* Glow effect */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Initial glow color */
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(100, 183, 222, 0.8); /* Middle glow color */
+            }
+            100% {
+                text-shadow: 0 0 30px rgba(227, 116, 216, 1); /* Final glow color */
+            }
+        }
+
+        /* Apply glow animation */
         h1:hover {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #64B7DE, 0 0 70px #E374D8, 0 0 80px #64B7DE; /* Glowing text-shadow */
+            animation: glow 1s infinite; /* Apply the glow animation on hover */
         }
 
         /* Style the text below the heading */
