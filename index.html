@@ -59,6 +59,7 @@
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
             animation: spin 2s linear infinite; /* Apply spin animation */
+            display: inline-block; /* Ensure the separator is inline with the text */
         }
 
         /* Style links on hover */
@@ -68,7 +69,6 @@
 
         /* Define spin animation */
         @keyframes spin {
-            0% { transform: rotate(0deg); } /* Rotate from 0 degrees */
             100% { transform: rotate(360deg); } /* Rotate to 360 degrees */
         }
     </style>
