@@ -58,8 +58,6 @@
         .separator {
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
-            display: inline-block; /* Ensure the separator is inline with the text */
-            transition: transform 0.5s ease; /* Smooth transition for transform change */
         }
 
         /* Style links on hover */
@@ -67,31 +65,23 @@
             opacity: 0.5; /* Reduce opacity on hover */
         }
 
-        /* Add class for rotating the separator */
-        .rotate {
-            transform: rotateY(180deg); /* Rotate the separator horizontally by 180 degrees */
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 36px; /* Decrease font size for smaller screens */
+            }
+            .links {
+                font-size: 14px; /* Decrease font size for smaller screens */
+            }
         }
     </style>
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
-        <a id="depop" href="http://depop.com/chanlr" target="_blank" onmouseover="spinSeparator()">Depop</a>
-        <span class="separator" id="separator">|</span>
-        <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank" onmouseover="spinSeparator()">TikTok</a>
+        <a id="depop" href="http://depop.com/chanlr" target="_blank">Depop</a>
+        <span class="separator">|</span>
+        <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
     </div>
-
-    <script>
-        // JavaScript function to add spinning animation to the separator
-        function spinSeparator() {
-            var separator = document.getElementById('separator');
-            // Add the 'rotate' class to rotate the separator
-            separator.classList.add('rotate');
-            // Remove the 'rotate' class after a delay to allow the animation to complete
-            setTimeout(function() {
-                separator.classList.remove('rotate');
-            }, 500); // Adjust the delay to match the transition duration
-        }
-    </script>
 </body>
 </html>
