@@ -67,10 +67,21 @@
 
         /* Style the "Depop" and "TikTok" images */
         .link-image {
-            width: 200px; /* Adjust the size as needed */
-            height: auto; /* Maintain aspect ratio */
-            transition: transform 0.5s ease; /* Smooth transition for transform change */
-        }
+    width: 200px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+    position: absolute; /* Position the images absolutely */
+    top: 0; /* Align the images to the top */
+    left: 0; /* Align the images to the left */
+}
+
+#depops-image {
+    z-index: 1; /* Ensure Depop image appears above TikTok image */
+}
+
+#tiktok-image {
+    z-index: 2; /* Ensure TikTok image appears above Depop image */
+}
     </style>
 </head>
 <body>
