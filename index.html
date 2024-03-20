@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>｡+.｡☆ﾟ:;｡+ﾟ ☆*ﾟ¨ﾟﾟ･*:..ﾞ</title>
     <style>
+        /* Importing and using custom font */
+        @font-face {
+            font-family: 'ArkPixelFont'; /* Name of the custom font family */
+            src: url('https://ark-pixel-font.takwolf.com/alphabet-16px-monospaced.html') format('html'), /* URL to the font file */
+                 url('https://ark-pixel-font.takwolf.com/alphabet-16px-monospaced.html') format('html'); /* Fallback URL for older browser support */
+            /* Add more src lines if you have different font file formats */
+        }
+
         /* Center the content horizontally */
         body {
             display: flex;
@@ -15,6 +23,7 @@
             color: white; /* White text color */
             margin: 0;
             padding-top: 50px; /* Center content vertically */
+            font-family: 'ArkPixelFont', monospace; /* Apply custom font family */
         }
 
         /* Style the heading */
@@ -66,31 +75,5 @@
         <span class="separator">|</span>
         <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
     </div>
-
-    <script>
-        // JavaScript code for fade effect
-        const textElements = document.querySelectorAll('.links span');
-
-        textElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                element.style.opacity = '0.5'; // Reduce opacity on mouseenter
-            });
-
-            element.addEventListener('mouseleave', () => {
-                element.style.opacity = '1'; // Restore opacity on mouseleave
-            });
-        });
-
-        // Fade effect for "CHAHANLER"
-        const chahanler = document.getElementById('chahanler');
-
-        chahanler.addEventListener('mouseenter', () => {
-            chahanler.style.opacity = '0.5'; // Reduce opacity on mouseenter
-        });
-
-        chahanler.addEventListener('mouseleave', () => {
-            chahanler.style.opacity = '1'; // Restore opacity on mouseleave
-        });
-    </script>
 </body>
 </html>
