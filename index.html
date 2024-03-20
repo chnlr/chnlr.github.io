@@ -74,27 +74,6 @@
                 font-size: 14px; /* Decrease font size for smaller screens */
             }
         }
-
-        /* Loader styles */
-        :root {
-            --point-color: #555;
-            --size: 5px;
-        }
-
-        .loader {
-            display: none; /* Hide the loader by default */
-        }
-
-        .loader__element {
-            border-radius: 100%;
-            border: var(--size) solid var(--point-color);
-            margin: calc(var(--size)*2);
-            animation: preloader .6s ease-in-out alternate infinite;
-        }
-
-        @keyframes preloader {
-            100% { transform: scale(2); }
-        }
     </style>
 </head>
 <body>
@@ -104,27 +83,5 @@
         <span class="separator">|</span>
         <a id="tiktok" href="http://tiktok.com/@chahanler" target="_blank">TikTok</a>
     </div>
-    <!-- Loader -->
-    <div class="loader">
-        <div class="loader__element"></div>
-        <div class="loader__element"></div>
-        <div class="loader__element"></div>
-    </div>
-
-    <script>
-        // Function to show the loader
-        function showLoader() {
-            document.querySelector('.loader').style.display = 'flex';
-        }
-
-        // Function to hide the loader
-        function hideLoader() {
-            document.querySelector('.loader').style.display = 'none';
-        }
-
-        // Example usage:
-        // Call showLoader() when you want to show the loader
-        // Call hideLoader() when you want to hide the loader
-    </script>
 </body>
 </html>
