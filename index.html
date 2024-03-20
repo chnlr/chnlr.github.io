@@ -4,7 +4,7 @@
     <link rel="icon" href="16666.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>｡+.｡☆ﾟ:;｡+ﾟ ☆*ﾟ¨ﾟﾟ･*:..ﾞ</title>
+    <title>Wind Effect</title>
     <style>
         /* Importing and using custom font */
         @font-face {
@@ -29,50 +29,19 @@
             font-style: italic;
             font-size: 48px;
             margin: 0;
-            transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
             cursor: pointer; /* Change cursor to pointer on hover */
         }
 
-        /* Glow effect on hover */
-        h1:hover {
-            text-shadow: 0 0 10px #E374D8, 0 0 20px #fff, 0 0 30px #64B7DE, 0 0 40px #64B7DE, 0 0 70px #E374D8, 0 0 80px #64B7DE; /* Glowing text-shadow */
+        /* Add animation */
+        @keyframes sway {
+            0% { transform: rotateZ(0deg); }
+            50% { transform: rotateZ(-3deg); } /* Sway to the left */
+            100% { transform: rotateZ(3deg); } /* Sway to the right */
         }
 
-        /* Style the text below the heading */
-        .links {
-            font-size: 18px; /* Smaller font size */
-            color: #777; /* Darker grey text color */
-            margin: 30px;
-            opacity: 1;
-            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
-        }
-
-        /* Style the links and separator */
-        .links a {
-            color: inherit; /* Inherit color from parent */
-            text-decoration: none; /* Remove default underline */
-            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
-        }
-
-        /* Style the separator */
-        .separator {
-            font-size: 18px; /* Smaller font size */
-            color: #777; /* Darker grey text color */
-        }
-
-        /* Style links on hover */
-        .links a:hover {
-            opacity: 0.5; /* Reduce opacity on hover */
-        }
-
-        /* Media query for smaller screens */
-        @media only screen and (max-width: 600px) {
-            h1 {
-                font-size: 36px; /* Decrease font size for smaller screens */
-            }
-            .links {
-                font-size: 14px; /* Decrease font size for smaller screens */
-            }
+        /* Apply animation to the text */
+        #depop {
+            animation: sway 2s ease-in-out infinite alternate; /* Sway back and forth */
         }
     </style>
 </head>
