@@ -93,6 +93,7 @@
         const depopsImage = document.getElementById('depops-image');
         const tiktokImage = document.getElementById('tiktok-image');
         const dividerImage = document.getElementById('divider-image');
+        let dividerHovered = false;
 
         // Function to change the image source to the animated GIF
         function playGif(element, divider) {
@@ -101,8 +102,9 @@
             } else if (element === 'tiktok') {
                 tiktokImage.src = 'tiktok wiggle.gif';
             }
-            if (divider === 'divider') {
+            if (divider === 'divider' && !dividerHovered) {
                 dividerImage.src = 'divider move.gif';
+                dividerHovered = true;
             }
         }
 
@@ -115,6 +117,7 @@
             }
             if (divider === 'divider') {
                 dividerImage.src = 'divider still.png';
+                dividerHovered = false;
             }
         }
     </script>
