@@ -93,6 +93,20 @@
         margin: 0 10px; /* Adjusted margin for smaller screens */
     }
 }
+ /* Animation for flying off into space */
+        @keyframes flyOff {
+            0% {
+                transform: translateY(0) rotateZ(0);
+            }
+            100% {
+                transform: translateY(-200vh) rotateZ(720deg);
+            }
+        }
+
+        /* Apply animation to header and links container */
+        .fly-off {
+            animation: flyOff 1s ease forwards;
+        }
     </style>
 </head>
 <body>
@@ -155,6 +169,15 @@ function stopGif(element, divider) {
         clickSound.play();
         playExplodeAnimation();
     });
+     window.addEventListener('scroll', () => {
+            const header = document.getElementById('chahanler');
+            const linksContainer = document.querySelector('.links');
+
+            if (window.scrollY > 100) { // Adjust the scroll threshold as needed
+                header.classList.add('fly-off');
+                linksContainer.classList.add('fly-off');
+            }
+        });
 </script>
 </body>
 </html>
