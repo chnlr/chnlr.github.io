@@ -115,11 +115,13 @@
     const tiktokImage = document.getElementById('tiktok-image');
     const dividerImage = document.getElementById('divider-image');
     let dividerHovered = false;
+    let isReversed = false;
 
     // Function to change the image source to the animated GIF
     function playGif(element, divider) {
         if (element === 'depops') {
             depopsImage.src = 'depops wiggle.gif';
+            isReversed = false; // Reset to forward animation
         } else if (element === 'tiktok') {
             tiktokImage.src = 'tiktok wiggle.gif';
         }
@@ -138,7 +140,11 @@
         }
         if (divider === 'divider') {
             dividerHovered = false;
-            dividerImage.src = 'divider still.png';
+            if (!isReversed) {
+                // Play the reverse animation
+                dividerImage.src = 'divider move_reverse.gif';
+                isReversed = true;
+            }
         }
     }
 
@@ -148,7 +154,8 @@
         setTimeout(() => {
             // After animation, redirect to secret page
             window.location.href = 'http://chahanler.com/secret';
-        }, 1000); // Adjust the delay time if needed
+        }, 
+1000); // Adjust the delay time if needed
     }
 
     // Add event listener to dividerImage to trigger explode animation on click
