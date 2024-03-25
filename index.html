@@ -42,9 +42,12 @@
         .links {
             font-size: 18px; /* Smaller font size */
             color: #777; /* Darker grey text color */
-            margin: 30px;
+            margin: 10px; /* Adjusted margin */
             opacity: 1;
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Style the links and separator */
@@ -71,21 +74,32 @@
             width: 50px; /* Adjust the width as needed */
             height: auto; /* Maintain aspect ratio */
             transition: transform 0.5s ease; /* Smooth transition for transform change */
+            margin: 10px 0; /* Adjusted margin */
+        }
+
+        /* Media query for smaller screens (mobile devices) */
+        @media only screen and (max-width: 600px) {
+            .links {
+                margin: 5px; /* Adjusted margin for smaller screens */
+            }
+            .link-image {
+                width: 150px; /* Adjusted image size for smaller screens */
+            }
         }
     </style>
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
-        <!-- Display the regular "Depop" image -->
-        <a href="https://example.com" onmouseover="playGif('depops', 'divider')" onmouseout="stopGif('depops', 'divider')">
-            <img id="depops-image" class="link-image" src="depops still.png" alt="Depop">
-        </a>
-        <!-- Display the divider image -->
-        <img id="divider-image" class="link-image" src="divider still.png" alt="Divider">
         <!-- Display the regular "TikTok" image -->
         <a href="https://example.com" onmouseover="playGif('tiktok', 'divider')" onmouseout="stopGif('tiktok', 'divider')">
             <img id="tiktok-image" class="link-image" src="tiktok still.png" alt="TikTok">
+        </a>
+        <!-- Display the divider image -->
+        <img id="divider-image" class="link-image" src="divider still.png" alt="Divider">
+        <!-- Display the regular "Depop" image -->
+        <a href="https://example.com" onmouseover="playGif('depops', 'divider')" onmouseout="stopGif('depops', 'divider')">
+            <img id="depops-image" class="link-image" src="depops still.png" alt="Depop">
         </a>
     </div>
 
@@ -112,7 +126,8 @@
         function stopGif(element, divider) {
             if (element === 'depops') {
                 depopsImage.src = 'depops still.png';
-            } else if (element === 'tiktok') {
+            } else if (element === 'tiktok')
+{
                 tiktokImage.src = 'tiktok still.png';
             }
             if (divider === 'divider') {
