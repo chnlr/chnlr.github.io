@@ -108,37 +108,49 @@
         </a>
     </div>
 
-    <script>
-        const depopsImage = document.getElementById('depops-image');
-        const tiktokImage = document.getElementById('tiktok-image');
-        const dividerImage = document.getElementById('divider-image');
-        let dividerHovered = false;
+   <script>
+    const depopsImage = document.getElementById('depops-image');
+    const tiktokImage = document.getElementById('tiktok-image');
+    const dividerImage = document.getElementById('divider-image');
+    let dividerHovered = false;
 
-        // Function to change the image source to the animated GIF
-        function playGif(element, divider) {
-            if (element === 'depops') {
-                depopsImage.src = 'depops wiggle.gif';
-            } else if (element === 'tiktok') {
-                tiktokImage.src = 'tiktok wiggle.gif';
-            }
-            if (divider === 'divider' && !dividerHovered) {
-                dividerImage.src = 'divider move.gif';
-                dividerHovered = true;
-            }
+    // Function to change the image source to the animated GIF
+    function playGif(element, divider) {
+        if (element === 'depops') {
+            depopsImage.src = 'depops wiggle.gif';
+        } else if (element === 'tiktok') {
+            tiktokImage.src = 'tiktok wiggle.gif';
         }
+        if (divider === 'divider' && !dividerHovered) {
+            dividerImage.src = 'divider move.gif';
+            dividerHovered = true;
+        }
+    }
 
-        // Function to change the image source back to the static image
-        function stopGif(element, divider) {
-            if (element === 'depops') {
-                depopsImage.src = 'depops still.png';
-            } else if (element === 'tiktok') {
-                tiktokImage.src = 'tiktok still.png';
-            }
-            if (divider === 'divider') {
-                dividerHovered = false;
-                dividerImage.src = 'divider still.png';
-            }
+    // Function to change the image source back to the static image
+    function stopGif(element, divider) {
+        if (element === 'depops') {
+            depopsImage.src = 'depops still.png';
+        } else if (element === 'tiktok') {
+            tiktokImage.src = 'tiktok still.png';
         }
-    </script>
+        if (divider === 'divider') {
+            dividerHovered = false;
+            dividerImage.src = 'divider still.png';
+        }
+    }
+
+    // Function to play explode animation when divider is clicked
+    function playExplodeAnimation() {
+        dividerImage.src = 'explode.gif';
+        setTimeout(() => {
+            // After animation, redirect to secret page
+            window.location.href = 'http://chahanler.com/secret';
+        }, 1000); // Adjust the delay time if needed
+    }
+
+    // Add event listener to dividerImage to trigger explode animation on click
+    dividerImage.addEventListener('click', playExplodeAnimation);
+</script>
 </body>
 </html>
