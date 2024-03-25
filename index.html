@@ -46,8 +46,7 @@
             opacity: 1;
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            align-items: center; /* Align items horizontally */
         }
 
         /* Style the links and separator */
@@ -55,6 +54,7 @@
             color: inherit; /* Inherit color from parent */
             text-decoration: none; /* Remove default underline */
             transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+            margin: 0 10px; /* Add some margin between the links */
         }
 
         /* Style links on hover */
@@ -74,16 +74,19 @@
             width: 50px; /* Adjust the width as needed */
             height: auto; /* Maintain aspect ratio */
             transition: transform 0.5s ease; /* Smooth transition for transform change */
-            margin: 10px 0; /* Adjusted margin */
         }
 
         /* Media query for smaller screens (mobile devices) */
         @media only screen and (max-width: 600px) {
             .links {
-                margin: 5px; /* Adjusted margin for smaller screens */
+                flex-direction: column; /* Change direction to column for smaller screens */
+                align-items: center; /* Align items horizontally */
             }
             .link-image {
                 width: 150px; /* Adjusted image size for smaller screens */
+            }
+            #divider-image {
+                margin: 10px 0; /* Adjusted margin for smaller screens */
             }
         }
     </style>
@@ -126,8 +129,7 @@
         function stopGif(element, divider) {
             if (element === 'depops') {
                 depopsImage.src = 'depops still.png';
-            } else if (element === 'tiktok')
-{
+            } else if (element === 'tiktok') {
                 tiktokImage.src = 'tiktok still.png';
             }
             if (divider === 'divider') {
