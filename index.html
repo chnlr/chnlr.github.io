@@ -148,7 +148,12 @@
     }
 
     // Add event listener to dividerImage to trigger explode animation on click
-    dividerImage.addEventListener('click', playExplodeAnimation);
+    dividerImage.addEventListener('click', () => {
+        // Play the click sound
+        const clickSound = new Audio('click.m4a');
+        clickSound.play();
+        playExplodeAnimation();
+    });
 </script>
 </body>
 </html>
