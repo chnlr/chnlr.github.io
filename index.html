@@ -95,13 +95,13 @@
 }
  /* Animation for flying off into space */
         @keyframes flyOff {
-            0% {
-                transform: translateY(0) rotateZ(0);
-            }
-            100% {
-                transform: translateY(-200vh) rotateZ(720deg);
-            }
-        }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200vw); /* Adjust the distance to move off-screen */
+    }
+}
 
         /* Apply animation to header and links container */
         .fly-off {
