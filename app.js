@@ -19,11 +19,12 @@ function playGif(element, divider) {
 function stopGif(element, divider) {
     if (element === 'depops') {
         depopsImage.src = 'depops still.png';
-        dividerImage.style.transform = 'rotate(0deg)';
     } else if (element === 'tiktok') {
         tiktokImage.src = 'tiktok still.png';
-        dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
     }
+
+    // Reset rotation for the divider GIF
+    dividerImage.style.transform = 'rotate(0deg)';
 }
 
 // Function to play explode animation when divider is clicked
