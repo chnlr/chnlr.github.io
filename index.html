@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>｡+.｡☆ﾟ:;｡+ﾟ ☆*ﾟ¨ﾟﾟ･*:..ﾞ</title>
-<style>
+    <style>
         /* Importing and using custom font */
         @font-face {
             font-family: 'Daydream'; /* Name of the custom font family */
@@ -61,115 +61,89 @@
         .link-image {
             width: 200px; /* Adjust the size as needed */
             height: auto; /* Maintain aspect ratio */
-            transition: transform 0.5s ease; /* Smooth transition for transform change */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
         }
 
-        /* Style the divider image */
-        #divider-image {
-            width: 50px; /* Adjust the width as needed */
-            height: auto; /* Maintain aspect ratio */
-            transition: transform 0.5s ease; /* Smooth transition for transform change */
-        }
-
+        /* Media query for smaller screens (mobile devices) */
         @media only screen and (max-width: 600px) {
-    .links {
-        flex-direction: row; /* Keep direction as row for smaller screens */
-        justify-content: center; /* Center items horizontally */
-        align-items: center; /* Align items vertically */
-    }
-    h1 {
-        font-size: 36px; /* Decrease font size for smaller screens */
-    }
-    .link-image {
-        width: 100px; /* Adjusted image size for smaller screens */
-    }
-    #divider-image {
-        margin: 0 10px; /* Adjusted margin for smaller screens */
-    }
-}
+            .links {
+                flex-direction: row; /* Keep direction as row for smaller screens */
+                justify-content: center; /* Center items horizontally */
+                align-items: center; /* Align items vertically */
+            }
+            h1 {
+                font-size: 36px; /* Decrease font size for smaller screens */
+            }
+            .link-image {
+                width: 100px; /* Adjusted image size for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
-        <a href="https://tiktok.com/@chahanler" target="_blank" onmouseover="playGif('tiktok', 'divider')" onmouseout="stopGif('tiktok', 'divider')">
+        <!-- Display the regular "TikTok" image -->
+        <a href="https://tiktok.com/@chahanler" target="_blank">
             <img id="tiktok-image" class="link-image" src="tiktok still.png" alt="TikTok">
         </a>
-        <img id="
-            </a>
-            </div>
-                </script>
+        <!-- Display the divider image -->
+        <img id="divider-image" class="link-image" src="divider still.png" alt="Divider">
+        <!-- Display the regular "Depop" image -->
+        <a href="https://depop.com/chanlr" target="_blank">
+            <img id="depops-image" class="link-image" src="depops still.png" alt="Depop">
+        </a>
+    </div>
     <script>
-        const chahanlerHeading = document.getElementById('chahanler');
-        const linksContainer = document.querySelector('.links');
-        const options = {
-            root: null, // Observe the entire viewport
-            threshold: 0.5, // Fade elements when 50% or more of their height is visible
-        };
+        // Add event listener to window for scroll event
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('chahanler');
+            const links = document.querySelectorAll('.links a');
+            const images = document.querySelectorAll('.link-image');
 
-        // Create an Intersection Observer to monitor visibility of the heading and links container
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    // Element is not visible, fade out
-                    chahanlerHeading.style.opacity = 0;
-                    linksContainer.style.opacity = 0;
-                } else {
-                    // Element is visible, fade in
-                    chahanlerHeading.style.opacity = 1;
-                    linksContainer.style.opacity = 1;
-                }
+            // Calculate opacity based on scroll position
+            const opacity = 1 - window.scrollY / 100;
+
+            // Apply opacity to elements
+            header.style.opacity = opacity;
+            links.forEach(link => {
+                link.style.opacity = opacity;
             });
-        }, options);
+            images.forEach(image => {
+                image.style.opacity = opacity;
+            });
+        });
 
-        // Observe the heading and links container for visibility changes
-        observer.observe(chahanlerHeading);
-        observer.observe(linksContainer);
-
-        const depopsImage = document.getElementById('depops-image'); // Assuming the depop image ID is 'depops-image'
+        // Add event listeners for TikTok and Depop image animations
         const tiktokImage = document.getElementById('tiktok-image');
+        const depopsImage = document.getElementById('depops-image');
         const dividerImage = document.getElementById('divider-image');
-        let dividerHovered = false;
 
-        // Function to change the image source to the animated GIF
-        function playGif(element, divider) {
-            if (element === 'depops') {
-                depopsImage.src = 'depops wiggle.gif';
-                dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
-            } else if (element === 'tiktok') {
+        function playGif(element) {
+            if (element === 'tiktok') {
                 tiktokImage.src = 'tiktok wiggle.gif';
                 dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF once
+            } else if (element === 'depops') {
+                depopsImage.src = 'depops wiggle.gif';
+                dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
             }
         }
 
-        // Function to change the image source back to the static image
-        function stopGif(element, divider) {
-            if (element === 'depops') {
-                depopsImage.src = 'depops still.png';
-                dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
-            } else if (element === 'tiktok') {
+        function stopGif(element) {
+            if (element === 'tiktok') {
                 tiktokImage.src = 'tiktok still.png';
                 dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
+            } else if (element === 'depops') {
+                depopsImage.src = 'depops still.png';
+                dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
             }
         }
 
-
-        // Function to play explode animation when divider is clicked
-        function playExplodeAnimation() {
-            dividerImage.src = 'divider explode.gif';
-            setTimeout(() => {
-                // After animation, redirect to secret page
-                window.location.href = 'http://chahanler.com/secret';
-            }, 1000); // Adjust the delay time if needed
-        }
-
-        // Add event listener to dividerImage to trigger explode animation on click
-        dividerImage.addEventListener('click', () => {
-            // Play the click sound
-            const clickSound = new Audio('click.mp3');
-            clickSound.play();
-            playExplodeAnimation();
-        });
+        // Attach event listeners for mouseover and mouseout
+        tiktokImage.addEventListener('mouseover', () => playGif('tiktok'));
+        tiktokImage.addEventListener('mouseout', () => stopGif('tiktok'));
+        depopsImage.addEventListener('mouseover', () => playGif('depops'));
+        depopsImage.addEventListener('mouseout', () => stopGif('depops'));
     </script>
 </body>
 </html>
