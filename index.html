@@ -186,21 +186,26 @@
         playExplodeAnimation();
     });
 
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('chahanler');
-        const linksContainer = document.querySelector('.links');
-        const hello = document.getElementById('hello');
+window.addEventListener('scroll', () => {
+    const header = document.getElementById('chahanler');
+    const linksContainer = document.querySelector('.links');
+    const hello = document.getElementById('hello');
+    
+    // Calculate the scroll percentage
+    const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
-        if (window.scrollY >= 500) { // Adjust the scroll threshold as needed
-            header.classList.add('fly-off');
-            linksContainer.classList.add('fly-off');
-            hello.style.opacity = 1; // Fade in the "hello" text
-        } else {
-            header.classList.remove('fly-off');
-            linksContainer.classList.remove('fly-off');
-            hello.style.opacity = 0; // Fade out the "hello" text
-        }
-    });
+    // Apply the fly-off animation based on the scroll percentage
+    if (scrollPercentage >= 10) { // Adjust the scroll threshold as needed
+        header.classList.add('fly-off');
+        linksContainer.classList.add('fly-off');
+    } else {
+        header.classList.remove('fly-off');
+        linksContainer.classList.remove('fly-off');
+    }
+
+    // Apply the fade-in animation for "hello" based on the scroll percentage
+    hello.style.opacity = Math.min(scrollPercentage / 10, 1); // Adjust the division factor as needed
+});
 </script>
 </body>
 </html>
