@@ -2,45 +2,44 @@
 const depopsImage = document.getElementById('depops-image');
 const tiktokImage = document.getElementById('tiktok-image');
 const dividerImage = document.getElementById('divider-image');
+const helloSection = document.getElementById('hello-message');
 
 // Function to change the image source to the animated GIF
-function playGif(element, divider) {
+function playGif(element) {
     if (element === 'depops') {
-        depopsImage.src = 'depops wiggle.gif';
-        dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
+        depopsImage.src = 'depops_wiggle.gif'; // Corrected file name
+        dividerImage.style.transform = 'rotate(-180deg)';
     } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok wiggle.gif';
-        dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF once
+        tiktokImage.src = 'tiktok_wiggle.gif'; // Corrected file name
+        dividerImage.style.transform = 'rotate(180deg)';
     }
 }
 
 // Function to change the image source back to the static image
-function stopGif(element, divider) {
+function stopGif(element) {
     if (element === 'depops') {
-        depopsImage.src = 'depops still.png';
+        depopsImage.src = 'depops_still.png';
         dividerImage.style.transform = 'rotate(0deg)';
     } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok still.png';
-        dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
+        tiktokImage.src = 'tiktok_still.png';
+        dividerImage.style.transform = 'rotate(0deg)';
     }
 }
 
 // Function to play explode animation when divider is clicked
 function playExplodeAnimation() {
-    dividerImage.src = 'divider explode.gif';
+    dividerImage.src = 'divider_explode.gif'; // Corrected file name
     setTimeout(() => {
         // After animation, redirect to secret page
         window.location.href = 'http://chahanler.com/secret';
     }, 1000); // Adjust the delay time if needed
 }
-// Get a reference to the "Hello" section
-const helloSection = document.getElementById('hello-message');
 
 // Options for the Intersection Observer
 const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0 // Trigger when 50% of the element is visible
+    threshold: 0 // Trigger as soon as any part of the element is visible
 };
 
 // Callback function to handle intersection changes
@@ -62,10 +61,11 @@ const observer = new IntersectionObserver(intersectionCallback, options);
 // Start observing the "Hello" section
 observer.observe(helloSection);
 
+// Add event listeners to TikTok and Depop images
+depopsImage.addEventListener('mouseover', () => playGif('depops'));
+depopsImage.addEventListener('mouseout', () => stopGif('depops'));
+tiktokImage.addEventListener('mouseover', () => playGif('tiktok'));
+tiktokImage.addEventListener('mouseout', () => stopGif('tiktok'));
+
 // Add event listener to dividerImage to trigger explode animation on click
-dividerImage.addEventListener('click', () => {
-    // Play the click sound
-    const clickSound = new Audio('click.mp3');
-    clickSound.play();
-    playExplodeAnimation();
-});
+dividerImage.addEventListener('click', () => playExplodeAnimation());
