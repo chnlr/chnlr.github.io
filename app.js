@@ -5,24 +5,24 @@ const dividerImage = document.getElementById('divider-image');
 const helloSection = document.getElementById('hello-message');
 
 // Function to change the image source to the animated GIF
-function playGif(element) {
+function playGif(element, divider) {
     if (element === 'depops') {
-        depopsImage.src = 'depops wiggle.gif'; // Corrected file name
-        dividerImage.style.transform = 'rotate(-180deg)';
+        depopsImage.src = 'depops wiggle.gif';
+        dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
     } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok wiggle.gif'; // Corrected file name
-        dividerImage.style.transform = 'rotate(180deg)';
+        tiktokImage.src = 'tiktok wiggle.gif';
+        dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF once
     }
 }
 
 // Function to change the image source back to the static image
-function stopGif(element) {
+function stopGif(element, divider) {
     if (element === 'depops') {
-        depopsImage.src = 'depops_still.png';
+        depopsImage.src = 'depops still.png';
         dividerImage.style.transform = 'rotate(0deg)';
     } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok_still.png';
-        dividerImage.style.transform = 'rotate(0deg)';
+        tiktokImage.src = 'tiktok still.png';
+        dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
     }
 }
 
