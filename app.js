@@ -7,10 +7,10 @@ const helloSection = document.getElementById('hello-message');
 // Function to change the image source to the animated GIF
 function playGif(element) {
     if (element === 'depops') {
-        depopsImage.src = 'depops_wiggle.gif'; // Corrected file name
+        depopsImage.src = 'depops wiggle.gif'; // Corrected file name
         dividerImage.style.transform = 'rotate(-180deg)';
     } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok_wiggle.gif'; // Corrected file name
+        tiktokImage.src = 'tiktok wiggle.gif'; // Corrected file name
         dividerImage.style.transform = 'rotate(180deg)';
     }
 }
