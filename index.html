@@ -195,8 +195,13 @@ window.addEventListener('scroll', () => {
     const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
     // Apply the fly-off animation based on the scroll percentage
-    header.style.opacity = 1 - (scrollPercentage / 100);
-    linksContainer.style.opacity = 1 - (scrollPercentage / 100);
+    if (scrollPercentage >= 10) { // Adjust the scroll threshold as needed
+        header.classList.add('fly-off');
+        linksContainer.classList.add('fly-off');
+    } else {
+        header.classList.remove('fly-off');
+        linksContainer.classList.remove('fly-off');
+    }
 
     // Apply the fade-in animation for "hello" based on the scroll percentage
     hello.style.opacity = Math.min(scrollPercentage / 10, 1); // Adjust the division factor as needed
