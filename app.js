@@ -3,6 +3,14 @@ const depopsImage = document.getElementById('depops-image');
 const tiktokImage = document.getElementById('tiktok-image');
 const dividerImage = document.getElementById('divider-image');
 
+// Function to preload images
+const preloadImages = (urls) => {
+  urls.forEach((url) => {
+    const img = new Image();
+    img.src = url;
+  });
+};
+
 // Function to change the image source to the animated GIF
 function playGif(element, divider) {
     if (element === 'depops') {
@@ -60,3 +68,9 @@ window.addEventListener('scroll', () => {
         links.classList.remove('fade-out-hide');
     }
 });
+
+// URLs of the GIFs to preload
+const gifUrls = ['depops wiggle.gif', 'tiktok wiggle.gif'];
+
+// Preload GIFs
+preloadImages(gifUrls);
