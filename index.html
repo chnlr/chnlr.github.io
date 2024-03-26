@@ -110,6 +110,19 @@
         .fade-out.fade-out-hide {
             opacity: 0;
         }
+
+        /* Dynamically changing font size for the "Hello" message */
+        .hello-message {
+            font-family: 'bubble', monospace;
+            color: black;
+            margin-top: 100vh;
+            transition: font-size 0.5s ease;
+        }
+
+        /* Increase font size as user scrolls down */
+        .hello-message.scrolled {
+            font-size: 36px; /* Adjust the font size as needed */
+        }
     </style>
 </head>
 <body>
@@ -127,6 +140,10 @@
         </a>
     </div>
 
+    <div class="hello-message" id="hello-message">
+        Hello
+    </div>
+
     <script>
         const depopsImage = document.getElementById('depops-image');
         const tiktokImage = document.getElementById('tiktok-image');
@@ -136,10 +153,10 @@
         // Function to change the image source to the animated GIF
         function playGif(element, divider) {
             if (element === 'depops') {
-                depopsImage.src = 'depops wiggle.gif';
+                depopsImage.src = 'depops_wiggle.gif';
                 dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
             } else if (element === 'tiktok') {
-                tiktokImage.src = 'tiktok wiggle.gif';
+                tiktokImage.src = 'tiktok_wiggle.gif';
                 dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF once
             }
         }
@@ -172,10 +189,9 @@
             playExplodeAnimation();
         });
 
-        // Add scroll event listener to fade out content when scrolling down
+        // Add scroll event listener to dynamically change font size of "Hello" message
         window.addEventListener('scroll', () => {
             const helloMessage = document.getElementById('hello-message');
-            const links = document.getElementById('links');
             const scrollPosition = window.scrollY;
 
             // Calculate the distance from the top of the page to the "Hello" message
@@ -183,18 +199,14 @@
 
             // Check if the scroll position is greater than or equal to the offset of the "Hello" message
             if (scrollPosition >= helloMessageOffsetTop) {
-                // Add class to fade out the links
-                links.classList.add('fade-out-hide');
+                // Add class to increase font size
+                helloMessage.classList.add('scrolled');
             } else {
-                // Remove class to show the links
-                links.classList.remove('fade-out-hide');
+                // Remove class to revert font size
+                helloMessage.classList.remove('scrolled');
             }
         });
     </script>
-
-    <!-- "Hello" message -->
-<div id="hello-message" style="font-family: 'bubble', monospace; font-size: 24px; color: black; margin-top: 100vh;">
-    Hello
-</div>
 </body>
 </html>
+
