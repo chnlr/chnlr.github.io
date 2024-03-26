@@ -39,12 +39,13 @@ function playExplodeAnimation() {
 const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0 // Trigger as soon as any part of the element is visible
+    threshold: 1.0 // Trigger when the entire element is visible
 };
 
 // Callback function to handle intersection changes
 const intersectionCallback = (entries, observer) => {
     entries.forEach(entry => {
+        console.log(entry); // Log the entry object
         if (entry.isIntersecting) {
             // If the section is intersecting with the viewport, remove the hidden class
             helloSection.classList.remove('hidden');
