@@ -29,13 +29,8 @@
             font-style: italic;
             font-size: 48px;
             margin: 0;
-            transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
             cursor: pointer; /* Change cursor to pointer on hover */
-        }
-
-        /* Glow effect on hover */
-        h1:hover {
-            text-shadow: 0 0 10px #E374D8, 0 0 20px #fff, 0 0 30px #64B7DE, 0 0 40px #64B7DE, 0 0 70px #E374D8, 0 0 80px #64B7DE; /* Glowing text-shadow */
         }
 
         /* Style the text below the heading */
@@ -76,7 +71,6 @@
             transition: transform 0.5s ease; /* Smooth transition for transform change */
         }
 
-        /* Media query for smaller screens (mobile devices) */
         @media only screen and (max-width: 600px) {
     .links {
         flex-direction: row; /* Keep direction as row for smaller screens */
@@ -98,63 +92,84 @@
 <body>
     <h1 id="chahanler">CHAHANLER</h1>
     <div class="links">
-        <!-- Display the regular "TikTok" image -->
         <a href="https://tiktok.com/@chahanler" target="_blank" onmouseover="playGif('tiktok', 'divider')" onmouseout="stopGif('tiktok', 'divider')">
             <img id="tiktok-image" class="link-image" src="tiktok still.png" alt="TikTok">
         </a>
-        <!-- Display the divider image -->
-        <img id="divider-image" class="link-image" src="divider still.png" alt="Divider">
-        <!-- Display the regular "Depop" image -->
-        <a href="https://depop.com/chanlr" target="_blank" onmouseover="playGif('depops', 'divider')" onmouseout="stopGif('depops', 'divider')">
-            <img id="depops-image" class="link-image" src="depops still.png" alt="Depop">
-        </a>
-    </div>
+        <img id="
+            </a>
+            </div>
+                </script>
+    <script>
+        const chahanlerHeading = document.getElementById('chahanler');
+        const linksContainer = document.querySelector('.links');
+        const options = {
+            root: null, // Observe the entire viewport
+            threshold: 0.5, // Fade elements when 50% or more of their height is visible
+        };
 
-<script>
-    const depopsImage = document.getElementById('depops-image');
-    const tiktokImage = document.getElementById('tiktok-image');
-    const dividerImage = document.getElementById('divider-image');
-    let dividerHovered = false;
+        // Create an Intersection Observer to monitor visibility of the heading and links container
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    // Element is not visible, fade out
+                    chahanlerHeading.style.opacity = 0;
+                    linksContainer.style.opacity = 0;
+                } else {
+                    // Element is visible, fade in
+                    chahanlerHeading.style.opacity = 1;
+                    linksContainer.style.opacity = 1;
+                }
+            });
+        }, options);
 
-// Function to change the image source to the animated GIF
-function playGif(element, divider) {
-    if (element === 'depops') {
-        depopsImage.src = 'depops wiggle.gif';
-        dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
-    } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok wiggle.gif';
-        dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF once
-    }
-}
+        // Observe the heading and links container for visibility changes
+        observer.observe(chahanlerHeading);
+        observer.observe(linksContainer);
 
-// Function to change the image source back to the static image
-function stopGif(element, divider) {
-    if (element === 'depops') {
-        depopsImage.src = 'depops still.png';
-        dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
-    } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok still.png';
-        dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
-    }
-}
+        const depopsImage = document.getElementById('depops-image'); // Assuming the depop image ID is 'depops-image'
+        const tiktokImage = document.getElementById('tiktok-image');
+        const dividerImage = document.getElementById('divider-image');
+        let dividerHovered = false;
+
+        // Function to change the image source to the animated GIF
+        function playGif(element, divider) {
+            if (element === 'depops') {
+                depopsImage.src = 'depops wiggle.gif';
+                dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
+            } else if (element === 'tiktok') {
+                tiktokImage.src = 'tiktok wiggle.gif';
+                dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF once
+            }
+        }
+
+        // Function to change the image source back to the static image
+        function stopGif(element, divider) {
+            if (element === 'depops') {
+                depopsImage.src = 'depops still.png';
+                dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
+            } else if (element === 'tiktok') {
+                tiktokImage.src = 'tiktok still.png';
+                dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
+            }
+        }
 
 
-    // Function to play explode animation when divider is clicked
-    function playExplodeAnimation() {
-        dividerImage.src = 'divider explode.gif';
-        setTimeout(() => {
-            // After animation, redirect to secret page
-            window.location.href = 'http://chahanler.com/secret';
-        }, 1000); // Adjust the delay time if needed
-    }
+        // Function to play explode animation when divider is clicked
+        function playExplodeAnimation() {
+            dividerImage.src = 'divider explode.gif';
+            setTimeout(() => {
+                // After animation, redirect to secret page
+                window.location.href = 'http://chahanler.com/secret';
+            }, 1000); // Adjust the delay time if needed
+        }
 
-    // Add event listener to dividerImage to trigger explode animation on click
-    dividerImage.addEventListener('click', () => {
-        // Play the click sound
-        const clickSound = new Audio('click.mp3');
-        clickSound.play();
-        playExplodeAnimation();
-    });
-</script>
+        // Add event listener to dividerImage to trigger explode animation on click
+        dividerImage.addEventListener('click', () => {
+            // Play the click sound
+            const clickSound = new Audio('click.mp3');
+            clickSound.play();
+            playExplodeAnimation();
+        });
+    </script>
 </body>
 </html>
