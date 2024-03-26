@@ -40,7 +40,7 @@ const helloSection = document.getElementById('hello-message');
 const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5 // Trigger when 50% of the element is visible
+    threshold: 0 // Trigger when 50% of the element is visible
 };
 
 // Callback function to handle intersection changes
