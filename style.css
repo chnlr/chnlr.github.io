@@ -100,3 +100,7 @@ h1:hover {
 .fade-out.fade-out-hide {
     opacity: 0;
 }
+
+.hidden {
+    display: none;
+}
