@@ -3,14 +3,25 @@ function showPopup() {
     document.getElementById('popup-modal').style.display = 'block';
 }
 
+// Debounce function to delay the execution of a function
+function debounce(func, delay) {
+    let timeoutId;
+    return function() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            func.apply(this, arguments);
+        }, delay);
+    };
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     var scrolled = false;
 
-    // Add event listener for scroll event
-    window.addEventListener('scroll', function() {
+    // Add event listener for scroll event with debouncing
+    window.addEventListener('scroll', debounce(function() {
         scrolled = true;
         showPopup(); // Call showPopup function when user scrolls
-    });
+    }, 100)); // Adjust the delay as needed
 
     // Add event listener to the play button
     document.getElementById('play-button').addEventListener('click', function() {
@@ -25,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(showPopup, 5000);
 });
 
-// Get references to HTML elements
+// Get references to HTML elements and other functions
 const depopsImage = document.getElementById('depops-image');
 const tiktokImage = document.getElementById('tiktok-image');
 const dividerImage = document.getElementById('divider-image');
