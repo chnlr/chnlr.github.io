@@ -110,13 +110,13 @@ h1:hover {
     margin-top: 20px; /* Adjust as needed */
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
-    opacity: 0; /* Initially hide the playlists */
-    transition: opacity 0.5s ease; /* Add transition for opacity change */
-    transform: translateY(100%); /* Initially position playlists below the viewport */
+    opacity: 0;
+    transform: translateY(50px); /* Start below the viewport */
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* When the playlists are visible, slide them up and increase opacity */
-.spotify-container.show {
+/* Apply styles when playlist is in view */
+.spotify-container.visible {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(0); /* Slide up into view */
 }
