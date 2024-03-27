@@ -1,3 +1,8 @@
+// Function to show the popup modal when the user scrolls
+function showPopup() {
+    document.getElementById('popup-modal').style.display = 'block';
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     var scrolled = false;
 
@@ -6,12 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
         scrolled = true;
         showPopup(); // Call showPopup function when user scrolls
     });
-
-    // Show the popup modal when the user scrolls
-    function showPopup() {
-        if (!scrolled) return;
-        document.getElementById('popup-modal').style.display = 'block';
-    }
 
     // Add event listener to the play button
     document.getElementById('play-button').addEventListener('click', function() {
