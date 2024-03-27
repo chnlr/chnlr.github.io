@@ -1,11 +1,11 @@
-// Function to check if an element is in the viewport
-function isInViewport(element) {
+// Function to check if an element is partially in the viewport
+function isPartiallyInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.top <= window.innerHeight && // Top of element is in viewport
+        rect.bottom >= 0 && // Bottom of element is in viewport
+        rect.left <= window.innerWidth && // Left side of element is in viewport
+        rect.right >= 0 // Right side of element is in viewport
     );
 }
 
@@ -13,7 +13,7 @@ function isInViewport(element) {
 function handleScroll() {
     const playlists = document.querySelectorAll('.spotify-container');
     playlists.forEach(function(playlist) {
-        if (isInViewport(playlist)) {
+        if (isPartiallyInViewport(playlist)) {
             playlist.classList.add('visible');
         }
     });
