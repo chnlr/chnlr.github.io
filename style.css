@@ -1,4 +1,121 @@
-/* Apply styles when playlist is in view */
+/* Importing and using custom font */
+@font-face {
+    font-family: 'Daydream'; /* Name of the custom font family */
+    src: url('Daydream.ttf') format('truetype'); /* URL to the font file and its format */
+}
+
+@font-face {
+    font-family: 'bubble'; /* Name of the custom font family */
+    src: url('bubble.otf') format('opentype'); /* URL to the font file and its format */
+}
+
+/* Center the content horizontally */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333; /* Dark grey background color */
+    color: white; /* White text color */
+    margin: 0;
+    padding-top: 50px; /* Center content vertically */
+    font-family: 'Daydream', monospace; /* Apply custom font family */
+}
+
+/* Style the heading */
+h1 {
+    font-style: italic;
+    font-size: 48px;
+    margin: 0;
+    transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Glow effect on hover */
+h1:hover {
+    text-shadow: 0 0 10px #E374D8, 0 0 20px #fff, 0 0 30px #64B7DE, 0 0 40px #64B7DE, 0 0 70px #E374D8, 0 0 80px #64B7DE; /* Glowing text-shadow */
+}
+
+/* Style the text below the heading */
+.links {
+    font-size: 18px; /* Smaller font size */
+    color: #777; /* Darker grey text color */
+    margin: 10px; /* Adjusted margin */
+    opacity: 0; /* Initially set opacity to 0 */
+    display: flex;
+    align-items: center; /* Align items horizontally */
+}
+
+/* Apply fade-in animation to the links container */
+.links.fade-in {
+    animation: fadeIn 1s ease forwards; /* Play the fade-in animation */
+}
+
+/* Define fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Style the links and separator */
+.links a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove default underline */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+    margin: 0 10px; /* Add some margin between the links */
+}
+
+/* Style links on hover */
+.links a:hover {
+    opacity: 0.5; /* Reduce opacity on hover */
+}
+
+/* Style the "Depop" and "TikTok" images */
+.link-image {
+    width: 200px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth transition for transform change */
+}
+
+/* Style the divider image */
+#divider-image {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth transition for transform change */
+}
+
+/* Media query for smaller screens (mobile devices) */
+@media only screen and (max-width: 600px) {
+    .links {
+        flex-direction: row; /* Keep direction as row for smaller screens */
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Align items vertically */
+    }
+    h1 {
+        font-size: 36px; /* Decrease font size for smaller screens */
+    }
+    .link-image {
+        width: 100px; /* Adjusted image size for smaller screens */
+    }
+    #divider-image {
+        margin: 0 10px; /* Adjusted margin for smaller screens */
+    }
+}
+
+/* Fading out effect */
+.fade-out {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.fade-out.fade-out-hide {
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Styling for Spotify containers */
 .spotify-container {
     margin-top: 20px; /* Adjust as needed */
     width: 100%; /* Make each container occupy the full width */
