@@ -29,7 +29,7 @@ function stopGif(element, divider) {
 
 // Function to play explode animation when divider is clicked
 function playExplodeAnimation() {
-    dividerImage.src = 'divider_explode.gif'; // Corrected file name
+    dividerImage.src = 'divider explode.gif';
     setTimeout(() => {
         // After animation, redirect to secret page
         window.location.href = 'http://chahanler.com/secret';
@@ -71,3 +71,31 @@ tiktokImage.addEventListener('mouseout', () => stopGif('tiktok'));
 
 // Add event listener to dividerImage to trigger explode animation on click
 dividerImage.addEventListener('click', () => playExplodeAnimation());
+
+document.addEventListener("DOMContentLoaded", function() {
+    var scrolled = false;
+
+    // Add event listener for scroll event
+    window.addEventListener('scroll', function() {
+        scrolled = true;
+    });
+
+    // Show the popup modal when the user scrolls
+    function showPopup() {
+        if (!scrolled) return;
+        document.getElementById('popup-modal').style.display = 'block';
+    }
+
+    // Add event listener to the play button
+    document.getElementById('play-button').addEventListener('click', function() {
+        // Hide the popup modal
+        document.getElementById('popup-modal').style.display = 'none';
+
+        // Start playing the second playlist
+        document.getElementById('playlist2').contentWindow.postMessage('{"method":"play"}', 'https://open.spotify.com');
+    });
+
+    // Call showPopup function after a certain delay (e.g., 5 seconds)
+    setTimeout(showPopup, 5000);
+});
+
