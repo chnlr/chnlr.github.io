@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add event listener for scroll event
     window.addEventListener('scroll', function() {
         scrolled = true;
+        showPopup(); // Call showPopup function when user scrolls
     });
 
     // Show the popup modal when the user scrolls
