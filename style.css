@@ -113,7 +113,7 @@ h1:hover {
 
 /* Styling for the popup modal */
 #popup-modal {
-    display: none;
+    display: none; /* Hide the popup modal by default */
     position: fixed;
     top: 0;
     left: 0;
