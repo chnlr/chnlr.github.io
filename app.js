@@ -5,7 +5,7 @@ const dividerImage = document.getElementById('divider-image');
 const helloSection = document.getElementById('hello-message');
 
 // Function to change the image source to the animated GIF
-function playGif(element, divider) {
+function playGif(element) {
     if (element === 'depops') {
         depopsImage.src = 'depops wiggle.gif';
         dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
@@ -16,7 +16,7 @@ function playGif(element, divider) {
 }
 
 // Function to change the image source back to the static image
-function stopGif(element, divider) {
+function stopGif(element) {
     if (element === 'depops') {
         depopsImage.src = 'depops still.png';
     } else if (element === 'tiktok') {
@@ -98,4 +98,3 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call showPopup function after a certain delay (e.g., 5 seconds)
     setTimeout(showPopup, 5000);
 });
-
