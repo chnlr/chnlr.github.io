@@ -16,12 +16,21 @@ function debounce(func, delay) {
 
 document.addEventListener("DOMContentLoaded", function() {
     var scrolled = false;
+    var popupShown = false; // Flag to track if popup has been shown
 
     // Add event listener for scroll event with debouncing
     window.addEventListener('scroll', debounce(function() {
-        scrolled = true;
-        showPopup(); // Call showPopup function when user scrolls
+        if (!popupShown && !scrolled) {
+            scrolled = true;
+            showPopup(); // Call showPopup function when user scrolls
+        }
     }, 100)); // Adjust the delay as needed
+
+    // Function to show the popup modal when the user scrolls
+    function showPopup() {
+        document.getElementById('popup-modal').style.display = 'block';
+        popupShown = true; // Set flag to true indicating popup has been shown
+    }
 
     // Add event listener to the play button
     document.getElementById('play-button').addEventListener('click', function() {
