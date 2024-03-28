@@ -12,12 +12,12 @@
 /* Center the content horizontally and vertically */
 body {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
     background-color: #333; /* Dark grey background color */
     color: white; /* White text color */
     margin: 0;
-    height: 100vh; /* Set height of body to 100% of viewport height */
     font-family: 'Daydream', monospace; /* Apply custom font family */
 }
 
@@ -71,6 +71,24 @@ h1:hover {
     width: 50px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
+}
+
+/* Styling for Spotify containers */
+.spotify-container {
+    margin-top: 20px; /* Adjust as needed */
+    width: 100%; /* Make each container occupy the full width */
+    max-width: 600px; /* Set a maximum width to avoid overlapping */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Media query for smaller screens (mobile devices) */
