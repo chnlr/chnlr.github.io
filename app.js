@@ -29,16 +29,3 @@ depopsImage.addEventListener('mouseover', () => playGif(depopsImage));
 depopsImage.addEventListener('mouseout', () => stopGif(depopsImage));
 tiktokImage.addEventListener('mouseover', () => playGif(tiktokImage));
 tiktokImage.addEventListener('mouseout', () => stopGif(tiktokImage));
-
-// Function to play explode animation when divider is clicked
-function playExplodeAnimation() {
-    dividerImage.src = 'divider explode.gif';
-    setTimeout(() => {
-        // After animation, redirect to secret page
-        window.location.href = 'http://chahanler.com/secret';
-    }, 1000); // Adjust the delay time if needed
-}
-
-// Add event listener to dividerImage to trigger explode animation on click
-dividerImage.addEventListener('click', playExplodeAnimation);
-
