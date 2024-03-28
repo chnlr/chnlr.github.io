@@ -4,18 +4,23 @@ const tiktokImage = document.getElementById('tiktok-image');
 const dividerImage = document.getElementById('divider-image');
 
 // Function to change the image source to the animated GIF and rotate divider image
-function playGif(imageElement) {
-    imageElement.src = imageElement.src.replace(' still.png', ' wiggle.gif');
-    if (imageElement === depopsImage) {
+function playGif(element) {
+    if (element === depopsImage) {
+        element.src = 'depops wiggle.gif';
         dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF for Depop
-    } else if (imageElement === tiktokImage) {
+    } else if (element === tiktokImage) {
+        element.src = 'tiktok wiggle.gif';
         dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF for TikTok
     }
 }
 
 // Function to change the image source back to the static image and reset divider rotation
-function stopGif(imageElement) {
-    imageElement.src = imageElement.src.replace(' wiggle.gif', ' still.png');
+function stopGif(element) {
+    if (element === depopsImage) {
+        element.src = 'depops still.png';
+    } else if (element === tiktokImage) {
+        element.src = 'tiktok still.png';
+    }
     dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
 }
 
