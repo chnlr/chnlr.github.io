@@ -26,7 +26,7 @@ function stopGif(element) {
 
 // Function to play explode animation when divider is clicked
 function playExplodeAnimation() {
-    dividerImage.src = 'divider_explode.gif'; // Ensure the correct path to the exploding GIF
+    dividerImage.src = 'divider explode.gif'; // Ensure the correct path to the exploding GIF
     setTimeout(() => {
         // After animation, redirect to secret page
         window.location.href = 'http://chahanler.com/secret';
