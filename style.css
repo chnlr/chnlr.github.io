@@ -26,6 +26,7 @@ h1 {
     font-style: italic;
     font-size: 50px;
     align-items: center;
+    justify-content: center;
     transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
@@ -39,7 +40,7 @@ h1:hover {
 .links {
     font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
-    margin: 40px; /* Adjusted margin */
+    margin: 40%; /* Adjusted margin */
     opacity: 1;
     transition: opacity 0.5s ease; /* Smooth transition for opacity change */
     display: flex;
@@ -75,7 +76,7 @@ h1:hover {
 
 /* Styling for Spotify containers */
 .spotify-container {
-    margin-top: 50%; /* Adjust as needed */
+    margin-top: 60%; /* Adjust as needed */
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
     animation: fadeIn 1s ease-out forwards;
