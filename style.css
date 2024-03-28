@@ -13,6 +13,8 @@
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
     background-color: #8EB0F7; /* Dark grey background color */
     color: white; /* White text color */
     font-family: 'Daydream', monospace; /* Apply custom font family */
@@ -22,9 +24,8 @@ body {
 h1 {
     font-style: italic;
     font-size: 50px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 60%;
+    text-align: center; /* Center text horizontally */
+    margin: 0; /* Remove default margin */
     transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
@@ -42,10 +43,11 @@ h1:hover {
     opacity: 1;
     transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
-    align-items: center; /* Align items horizontally */
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center items horizontally */
 }
 
-/* Style the links and separator */
+/* Style the links */
 .links a {
     color: inherit; /* Inherit color from parent */
     text-decoration: none; /* Remove default underline */
@@ -74,12 +76,10 @@ h1:hover {
 
 /* Styling for Spotify containers */
 .spotify-container {
-    margin-top: 20%; /* Adjust as needed */
-    msrgin: 5px
+    margin-top: 20px; /* Adjust as needed */
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
     animation: fadeIn 1s ease-out forwards;
-    opacity: 100; /* Initially hide the playlists */
 }
 
 /* Animation keyframes */
@@ -97,7 +97,6 @@ h1:hover {
     .links {
         flex-direction: row; /* Keep direction as row for smaller screens */
         justify-content: center; /* Center items horizontally */
-        align-items: center; /* Align items vertically */
     }
     h1 {
         font-size: 36px; /* Decrease font size for smaller screens */
