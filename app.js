@@ -41,3 +41,4 @@ function playExplodeAnimation() {
 
 // Add event listener to dividerImage to trigger explode animation on click
 dividerImage.addEventListener('click', playExplodeAnimation);
+
