@@ -6,10 +6,10 @@ const dividerImage = document.getElementById('divider-image');
 // Function to change the image source to the animated GIF and rotate divider image
 function playGif(element) {
     if (element === depopsImage) {
-        element.src = 'depops wiggle.gif';
+        depopsImage.src = 'depops wiggle.gif';
         dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF for Depop
     } else if (element === tiktokImage) {
-        element.src = 'tiktok wiggle.gif';
+        tiktokImage.src = 'tiktok wiggle.gif';
         dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF for TikTok
     }
 }
@@ -17,9 +17,9 @@ function playGif(element) {
 // Function to change the image source back to the static image and reset divider rotation
 function stopGif(element) {
     if (element === depopsImage) {
-        element.src = 'depops still.png';
+        depopsImage.src = 'depops still.png';
     } else if (element === tiktokImage) {
-        element.src = 'tiktok still.png';
+        tiktokImage.src = 'tiktok still.png';
     }
     dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
 }
