@@ -18,6 +18,7 @@ body {
     background-color: #8EB0F7; /* Dark grey background color */
     color: white; /* White text color */
     margin: 0;
+    height: 100vh; /* Set the body height to full viewport height */
     font-family: 'Daydream', monospace; /* Apply custom font family */
 }
 
@@ -28,6 +29,10 @@ h1 {
     margin: 0;
     transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
     cursor: pointer; /* Change cursor to pointer on hover */
+    position: absolute; /* Position the heading absolutely */
+    top: 50%; /* Align the heading vertically in the middle of the viewport */
+    left: 50%; /* Align the heading horizontally in the middle of the viewport */
+    transform: translate(-50%, -50%); /* Adjust the heading position */
 }
 
 /* Glow effect on hover */
