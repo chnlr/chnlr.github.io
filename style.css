@@ -9,15 +9,15 @@
     src: url('bubble.otf') format('opentype'); /* URL to the font file and its format */
 }
 
-/* Center the content horizontally */
+/* Center the content horizontally and vertically */
 body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     background-color: #333; /* Dark grey background color */
     color: white; /* White text color */
     margin: 0;
-    padding-top: 50px; /* Center content vertically */
+    height: 100vh; /* Set height of body to 100% of viewport height */
     font-family: 'Daydream', monospace; /* Apply custom font family */
 }
 
