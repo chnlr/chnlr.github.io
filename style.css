@@ -84,6 +84,7 @@ h1:hover {
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
     animation: fadeIn 1s ease-out forwards;
+    display: none; /* Initially hide the playlists */
 }
 
 /* Animation keyframes */
@@ -127,6 +128,7 @@ h1:hover {
 .hidden {
     display: none;
 }
+
 /* Styling for Spotify containers */
 .spotify-container {
     margin-top: 20px; /* Adjust as needed */
