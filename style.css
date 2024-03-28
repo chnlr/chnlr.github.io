@@ -38,9 +38,9 @@ h1:hover {
 .links {
     font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
-    margin-top: 20%; /* Adjusted margin */
+    margin-top: 5%; /* Adjusted margin */
     opacity: 1;
-    transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+    transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
     align-items: center; /* Align items horizontally */
 }
@@ -49,7 +49,7 @@ h1:hover {
 .links a {
     color: inherit; /* Inherit color from parent */
     text-decoration: none; /* Remove default underline */
-    transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+    transition: opacity 1s ease; /* Smooth transition for opacity change */
     margin: 5px; /* Add some margin between the links */
 }
 
@@ -75,7 +75,7 @@ h1:hover {
 /* Styling for Spotify containers */
 .spotify-container {
     margin-top: 20%; /* Adjust as needed */
-    msrgin: 10px
+    msrgin: 5px
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
     animation: fadeIn 1s ease-out forwards;
