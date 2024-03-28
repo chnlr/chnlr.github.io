@@ -1,72 +1,49 @@
-// Function to show the popup modal when the user scrolls
-function showPopup() {
-    document.getElementById('popup-modal').style.display = 'block';
-}
-
 document.addEventListener("DOMContentLoaded", function() {
-    var scrolled = false;
+    // Get references to HTML elements
+    const depopsImage = document.getElementById('depops-image');
+    const tiktokImage = document.getElementById('tiktok-image');
+    const dividerImage = document.getElementById('divider-image');
+    const popupModal = document.getElementById('popup-modal');
+    const playButton = document.getElementById('play-button');
 
-    // Add event listener for scroll event
-    window.addEventListener('scroll', function() {
-        scrolled = true;
-        showPopup(); // Call showPopup function when user scrolls
-    });
+    // Function to change the image source to the animated GIF
+    function playGif(imageElement) {
+        imageElement.src = imageElement.src.replace('.png', ' wiggle.gif');
+        dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF
+    }
 
-    // Add event listener to the play button
-    document.getElementById('play-button').addEventListener('click', function() {
-        // Hide the popup modal
-        document.getElementById('popup-modal').style.display = 'none';
+    // Function to change the image source back to the static image
+    function stopGif(imageElement) {
+        imageElement.src = imageElement.src.replace(' wiggle.gif', '.png');
+        dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
+    }
 
-        // Start playing the second playlist
+    // Add event listeners to TikTok and Depop images
+    depopsImage.addEventListener('mouseover', () => playGif(depopsImage));
+    depopsImage.addEventListener('mouseout', () => stopGif(depopsImage));
+    tiktokImage.addEventListener('mouseover', () => playGif(tiktokImage));
+    tiktokImage.addEventListener('mouseout', () => stopGif(tiktokImage));
+
+    // Function to play explode animation when divider is clicked
+    function playExplodeAnimation() {
+        dividerImage.src = 'divider explode.gif';
+        setTimeout(() => {
+            // After animation, redirect to secret page
+            window.location.href = 'http://chahanler.com/secret';
+        }, 1000); // Adjust the delay time if needed
+    }
+
+    // Add event listener to dividerImage to trigger explode animation on click
+    dividerImage.addEventListener('click', playExplodeAnimation);
+
+    // Add event listener to the play button to hide the popup modal and start playing the second playlist
+    playButton.addEventListener('click', function() {
+        popupModal.style.display = 'none'; // Hide the popup modal
         document.getElementById('playlist2').contentWindow.postMessage('{"method":"play"}', 'https://open.spotify.com');
     });
 
     // Call showPopup function after a certain delay (e.g., 5 seconds)
-    setTimeout(showPopup, 5000);
-});
-
-// Get references to HTML elements
-const depopsImage = document.getElementById('depops-image');
-const tiktokImage = document.getElementById('tiktok-image');
-const dividerImage = document.getElementById('divider-image');
-
-// Function to change the image source to the animated GIF
-function playGif(element) {
-    if (element === 'depops') {
-        depopsImage.src = 'depops wiggle.gif';
-        dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF in reverse
-    } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok wiggle.gif';
-        dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF once
-    }
-}
-
-// Function to change the image source back to the static image
-function stopGif(element) {
-    if (element === 'depops') {
-        depopsImage.src = 'depops still.png';
-    } else if (element === 'tiktok') {
-        tiktokImage.src = 'tiktok still.png';
-    }
-
-    // Reset rotation for the divider GIF
-    dividerImage.style.transform = 'rotate(0deg)';
-}
-
-// Function to play explode animation when divider is clicked
-function playExplodeAnimation() {
-    dividerImage.src = 'divider explode.gif';
     setTimeout(() => {
-        // After animation, redirect to secret page
-        window.location.href = 'http://chahanler.com/secret';
-    }, 1000); // Adjust the delay time if needed
-}
-
-// Add event listeners to TikTok and Depop images
-depopsImage.addEventListener('mouseover', () => playGif('depops'));
-depopsImage.addEventListener('mouseout', () => stopGif('depops'));
-tiktokImage.addEventListener('mouseover', () => playGif('tiktok'));
-tiktokImage.addEventListener('mouseout', () => stopGif('tiktok'));
-
-// Add event listener to dividerImage to trigger explode animation on click
-dividerImage.addEventListener('click', () => playExplodeAnimation());
+        popupModal.style.display = 'block'; // Show the popup modal after the delay
+    }, 5000);
+});
