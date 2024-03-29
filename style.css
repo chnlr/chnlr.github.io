@@ -68,19 +68,26 @@ h1:hover {
     transition: transform 0.5s ease; /* Smooth transition for transform change */
 }
 
-/* Style the divider image */
-#divider-image {
-    width: 50px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.5s ease; /* Smooth transition for transform change */
+/* Style the text below the heading */
+.links {
+    font-size: 18px; /* Smaller font size */
+    color: #777; /* Darker grey text color */
+    margin-top: 30vh; /* Adjusted margin to move the links down */
+    opacity: 1;
+    transition: opacity 1s ease; /* Smooth transition for opacity change */
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
 }
 
 /* Styling for Spotify containers */
 .spotify-container {
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 10vh; /* Adjusted margin to move the playlists down */
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
     animation: fadeIn 1s ease-out forwards;
+    opacity: 100; /* Initially hide the playlists */
 }
 
 /* Animation keyframes */
