@@ -43,8 +43,9 @@ h1:hover {
     opacity: 1;
     transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
 }
 
 /* Style the links */
