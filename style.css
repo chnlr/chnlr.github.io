@@ -89,7 +89,6 @@ h1:hover {
     animation: fadeIn 1s ease-out forwards;
     opacity: 100; /* Initially hide the playlists */
 }
-
 /* Animation keyframes */
 @keyframes fadeIn {
     0% {
