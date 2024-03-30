@@ -24,8 +24,9 @@ body {
 h1 {
     font-style: italic;
     font-size: 50px;
-    text-align: center; /* Center text horizontally */
-    margin: 0; /* Remove default margin */
+    align-items: center;
+    justify-content: center;
+    margin-top: 30vh; /* Adjusted margin to move the header down */
     transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
