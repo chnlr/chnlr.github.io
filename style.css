@@ -13,7 +13,7 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center content horizontally */
     justify-content: center; /* Center content vertically */
     background-color: #8EB0F7; /* Dark grey background color */
     color: white; /* White text color */
