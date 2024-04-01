@@ -21,12 +21,14 @@ body {
 }
 
 /* Style the heading */
-h1 {
+h1#chahanler {
     font-style: italic;
     font-size: 50px;
     align-items: center;
     justify-content: center;
-    margin-top: 30vh; /* Adjusted margin to move the header down */
+    margin-top: 60%;
+    margin-bottom: 10%; /* Adjusted margin */
+    text-align: center; /* Center text horizontally */
     transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
