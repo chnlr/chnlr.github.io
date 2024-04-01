@@ -115,8 +115,10 @@ h1:hover {
         width: 100px; /* Adjusted image size for smaller screens */
     }
     #divider-image {
-        margin: 0 10px; /* Adjusted margin for smaller screens */
-    }
+    width: 30px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth transition for transform change */
+}
 }
 
 /* Fading out effect */
