@@ -42,7 +42,7 @@ h1:hover {
 .links {
     font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
-    margin-top: 5%; /* Adjusted margin */
+    margin-top: 5px; /* Adjusted margin */
     opacity: 1;
     transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
