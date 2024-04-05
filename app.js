@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             depopsImage.src = 'depops wiggle.gif'; // Correct the GIF filename
             dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF for Depop
         } else if (element.id === 'tiktok-image') {
-            tiktokImage.src = 'tiktok wiggle.gif'; // Correct the GIF filename
+            tiktokImage.src = 'tikttokwiggle.gif'; // Correct the GIF filename
             dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF for TikTok
         }
     }
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (element.id === 'depops-image') {
             depopsImage.src = 'depops still.png'; // Correct the image filename
         } else if (element.id === 'tiktok-image') {
-            tiktokImage.src = 'tiktok still.png'; // Correct the image filename
+            tiktokImage.src = 'tiktokstill.png'; // Correct the image filename
         }
         dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
     }
