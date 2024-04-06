@@ -26,14 +26,12 @@ body {
     height: auto; /* Maintain aspect ratio */
     margin-top: 10vh; /* Adjusted margin */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
-    background-size: cover; /* Ensure the background image covers the element */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-
-/* Glow effect on hover */
-h1:hover {
-    text-shadow: 0 0 10px #E374D8, 0 0 20px #fff, 0 0 30px #64B7DE, 0 0 40px #64B7DE, 0 0 70px #E374D8, 0 0 80px #64B7DE; /* Glowing text-shadow */
+/* Glow effect on hover for GIF */
+#chahanler-gif:hover {
+    box-shadow: 0 0 10px #E374D8, 0 0 20px #fff, 0 0 30px #64B7DE, 0 0 40px #64B7DE, 0 0 70px #E374D8, 0 0 80px #64B7DE; /* Glowing box-shadow */
 }
 
 /* Style the text below the heading */
@@ -69,7 +67,6 @@ h1:hover {
     height: auto; /* Maintain aspect ratio */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
 }
-
 
 /* Style the text below the heading */
 .links {
