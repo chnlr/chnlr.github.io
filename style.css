@@ -116,11 +116,14 @@ h1:hover {
     .link-image {
         width: 100px; /* Adjusted image size for smaller screens */
     }
-    #divider-image {
-    width: 20px; /* Adjust the width as needed */
+    
+   /* Style the divider image */
+#divider-image {
+    width: 30px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
 }
+
 }
 
 /* Fading out effect */
