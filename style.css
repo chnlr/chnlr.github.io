@@ -24,9 +24,10 @@ body {
 #chahanler-gif {
     width: 600px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
+    margin: auto; /* Center the image horizontally */
     margin-top: 20vh; /* Adjusted margin */
     margin-bottom: 20vh; /* Adjusted margin */
-    transition: transform 0.5s ease; /* Smooth transition for transform change */
+    display: block; /* Ensure the image is displayed as a block element */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
