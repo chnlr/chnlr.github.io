@@ -114,12 +114,12 @@ h1:hover {
         width: 100px; /* Adjusted image size for smaller screens */
     }
     
-    /* Style the divider image */
-    #divider-image {
-        width: 10px !important; /* Adjust the width as needed */
-        height: auto; /* Maintain aspect ratio */
-        transition: transform 0.5s ease; /* Smooth transition for transform change */
-    }
+/* Style the divider image */
+#divider-image {
+    width: 20px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth transition for transform change */
+}
 }
 
 
