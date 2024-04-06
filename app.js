@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             depopsImage.src = 'depopwiggle.gif'; // Correct the GIF filename
             dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF for Depop
         } else if (element.id === 'tiktok-image') {
-            tiktokImage.src = 'tikttokwiggle.gif'; // Correct the GIF filename
+            tiktokImage.src = 'tiktokwiggle.gif'; // Correct the GIF filename
             dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF for TikTok
         }
     }
