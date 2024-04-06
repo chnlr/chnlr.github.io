@@ -20,14 +20,12 @@ body {
     font-family: 'Daydream', monospace; /* Apply custom font family */
 }
 
-/* Style the heading */
-h1#chahanler {
-    font-style: italic;
-    font-size: 50px;
-    text-align: center; /* Center text horizontally */
+/* Style the CHAHANLER GIF */
+#chahanler-gif {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
     margin-top: 10vh; /* Adjusted margin */
-    transition: text-shadow 0.5s ease; /* Smooth transition for text-shadow change */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.5s ease; /* Smooth transition for transform change */
 }
 
 /* Glow effect on hover */
