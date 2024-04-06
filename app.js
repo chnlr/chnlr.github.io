@@ -25,30 +25,30 @@ document.addEventListener('DOMContentLoaded', function () {
         dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
     }
 
-    // Function to play explode animation when divider is clicked
-    function playExplodeAnimation() {
-        console.log('Divider clicked!'); // Check if the click event is triggered
-        dividerImage.src = 'divider explode.gif'; // Ensure the correct path to the exploding GIF
-        setTimeout(() => {
-            console.log('Redirecting to /secret...');
-            // After animation, redirect to secret page
-            window.location.href = 'http://chahanler.com/secret';
-        }, 1000); // Adjust the delay time if needed
-    }
+// Function to play explode animation when divider is clicked
+function playExplodeAnimation() {
+    console.log('Divider clicked!'); // Check if the click event is triggered
+    dividerImage.src = 'divider explode.gif'; // Ensure the correct path to the exploding GIF
+    setTimeout(() => {
+        console.log('Redirecting to /secret...');
+        // After animation, redirect to secret page
+        window.location.href = 'http://chahanler.com/secret';
+    }, 1000); // Adjust the delay time if needed
+}
 
-    // Add event listener to dividerImage to trigger explode animation on click
-    if (dividerImage) {
-        console.log('Divider image found!');
-        dividerImage.addEventListener('click', playExplodeAnimation);
-    } else {
-        console.error('Divider image not found!');
-    }
+// Add event listener to dividerImage to trigger explode animation on click
+if (dividerImage) {
+    console.log('Divider image found!');
+    dividerImage.addEventListener('click', playExplodeAnimation);
+} else {
+    console.error('Divider image not found!');
+}
 
-    // Add event listeners to TikTok and Depop images
-    if (depopsImage && tiktokImage) {
-        depopsImage.addEventListener('mouseover', () => playGif(depopsImage));
-        depopsImage.addEventListener('mouseout', () => stopGif(depopsImage));
-        tiktokImage.addEventListener('mouseover', () => playGif(tiktokImage));
-        tiktokImage.addEventListener('mouseout', () => stopGif(tiktokImage));
-    }
+// Add event listeners to TikTok and Depop images
+if (depopsImage && tiktokImage) {
+    depopsImage.addEventListener('mouseover', () => playGif(depopsImage));
+    depopsImage.addEventListener('mouseout', () => stopGif(depopsImage));
+    tiktokImage.addEventListener('mouseover', () => playGif(tiktokImage));
+    tiktokImage.addEventListener('mouseout', () => stopGif(tiktokImage));
+}
 });
