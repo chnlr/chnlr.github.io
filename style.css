@@ -85,6 +85,8 @@ body {
 
 /* Media query for smaller screens (mobile devices) */
 @media only screen and (max-width: 600px) {
+    /* CSS rules for smaller screens */
+}
     .links {
         flex-direction: row; /* Keep direction as row for smaller screens */
         justify-content: center; /* Center items horizontally */
