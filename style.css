@@ -26,7 +26,10 @@ body {
     height: auto; /* Maintain aspect ratio */
     margin-top: 10vh; /* Adjusted margin */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
+    background-size: cover; /* Ensure the background image covers the element */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
 }
+
 
 /* Glow effect on hover */
 h1:hover {
