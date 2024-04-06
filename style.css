@@ -22,7 +22,7 @@ body {
 
 /* Style the CHAHANLER GIF */
 #chahanler-gif {
-    width: 600px; /* Adjust the width as needed */
+    width: 500px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     margin: auto; /* Center the image horizontally */
     margin-top: 20vh; /* Adjusted margin */
@@ -60,10 +60,17 @@ body {
 /* Style the "Depop" and "TikTok" images */
 #depops-image,
 #tiktok-image {
-    width: 300px; /* Adjust the size as needed */
+    width: 200px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
     margin: auto; /* Center the image horizontally */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
+}
+
+/* Styling for the divider image */
+#divider-image {
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: auto; /* Center the image horizontally */
 }
 
 /* Styling for Spotify containers */
@@ -93,6 +100,10 @@ body {
 
     #depops-image,
     #tiktok-image {
-        width: 90%; /* Adjust the size for smaller screens */
+        width: 80%; /* Adjust the size for smaller screens */
+    }
+
+    #divider-image {
+        width: 30px; /* Adjust the size for smaller screens */
     }
 }
