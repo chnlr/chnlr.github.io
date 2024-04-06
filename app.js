@@ -44,18 +44,21 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Divider image not found!');
     }
 
-    // Add event listeners to TikTok and Depop images to trigger rotation of the divider
-    if (depopsImage && tiktokImage && dividerImage) {
-        depopsImage.addEventListener('mouseover', () => playGif(depopsImage));
-        depopsImage.addEventListener('mouseout', () => stopGif(depopsImage));
-        tiktokImage.addEventListener('mouseover', () => playGif(tiktokImage));
-        tiktokImage.addEventListener('mouseout', () => stopGif(tiktokImage));
-        // Also add the event listeners directly to the divider image
+    // Add event listener to trigger rotation of the divider on hover
+    if (dividerImage) {
         dividerImage.addEventListener('mouseover', () => {
-            dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF for Depop
+            dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF
         });
         dividerImage.addEventListener('mouseout', () => {
             dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
         });
+    }
+
+    // Add event listeners to TikTok and Depop images to trigger rotation of the divider
+    if (depopsImage && tiktokImage) {
+        depopsImage.addEventListener('mouseover', () => playGif(depopsImage));
+        depopsImage.addEventListener('mouseout', () => stopGif(depopsImage));
+        tiktokImage.addEventListener('mouseover', () => playGif(tiktokImage));
+        tiktokImage.addEventListener('mouseout', () => stopGif(tiktokImage));
     }
 });
