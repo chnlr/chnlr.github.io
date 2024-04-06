@@ -22,12 +22,15 @@ body {
 
 /* Style the CHAHANLER GIF */
 #chahanler-gif {
-    width: 200px; /* Adjust the width as needed */
+    width: 400px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    margin-top: 10vh; /* Adjusted margin */
+    margin-top: 20vh; /* Adjusted margin */
+    margin-bottom: 20vh; /* Adjusted margin */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
     cursor: pointer; /* Change cursor to pointer on hover */
-    background-size: cover; /* Ensure the background image covers the entire area */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 /* Style the text below the heading */
