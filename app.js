@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to change the image source to the animated GIF and rotate divider image
     function playGif(element) {
         if (element.id === 'depops-image') {
-            depopsImage.src = 'depopwiggle.gif'; // Correct the GIF filename
+            element.src = 'depopwiggle.gif'; // Update the source of the element passed as parameter
             dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF for Depop
         } else if (element.id === 'tiktok-image') {
-            tiktokImage.src = 'tiktokwiggle.gif'; // Correct the GIF filename
+            element.src = 'tiktokwiggle.gif'; // Update the source of the element passed as parameter
             dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF for TikTok
         }
     }
@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to change the image source back to the static image and reset divider rotation
     function stopGif(element) {
         if (element.id === 'depops-image') {
-            depopsImage.src = 'depopstill.png'; // Correct the image filename
+            element.src = 'depopstill.png'; // Update the source of the element passed as parameter
         } else if (element.id === 'tiktok-image') {
-            tiktokImage.src = 'tiktokstill.png'; // Correct the image filename
+            element.src = 'tiktokstill.png'; // Update the source of the element passed as parameter
         }
         dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
     }
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to play explode animation when divider is clicked
     function playExplodeAnimation() {
         console.log('Divider clicked!'); // Check if the click event is triggered
-        dividerImage.src = 'divider-explode.gif'; // Ensure the correct path to the exploding GIF
+        dividerImage.src = 'divider explode.gif'; // Ensure the correct path to the exploding GIF
         setTimeout(() => {
             console.log('Redirecting to /secret...');
             // After animation, redirect to secret page
@@ -44,17 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Divider image not found!');
     }
 
-    // Add event listener to trigger rotation of the divider on hover
-    if (dividerImage) {
-        dividerImage.addEventListener('mouseover', () => {
-            dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF
-        });
-        dividerImage.addEventListener('mouseout', () => {
-            dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
-        });
-    }
-
-    // Add event listeners to TikTok and Depop images to trigger rotation of the divider
+    // Add event listeners to TikTok and Depop images
     if (depopsImage && tiktokImage) {
         depopsImage.addEventListener('mouseover', () => playGif(depopsImage));
         depopsImage.addEventListener('mouseout', () => stopGif(depopsImage));
