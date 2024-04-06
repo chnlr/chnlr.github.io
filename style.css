@@ -65,11 +65,13 @@ h1:hover {
 }
 
 /* Style the "Depop" and "TikTok" images */
-.link-image {
-    width: 200px; /* Adjust the size as needed */
+#depops-image,
+#tiktok-image {
+    width: 150px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
 }
+
 
 /* Style the text below the heading */
 .links {
