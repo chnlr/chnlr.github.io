@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to change the image source to the animated GIF and rotate divider image
     function playGif(element) {
         if (element.id === 'depops-image') {
-            depopsImage.src = 'depops wiggle.gif'; // Correct the GIF filename
+            depopsImage.src = 'depopwiggle.gif'; // Correct the GIF filename
             dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF for Depop
         } else if (element.id === 'tiktok-image') {
             tiktokImage.src = 'tikttokwiggle.gif'; // Correct the GIF filename
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to change the image source back to the static image and reset divider rotation
     function stopGif(element) {
         if (element.id === 'depops-image') {
-            depopsImage.src = 'depops still.png'; // Correct the image filename
+            depopsImage.src = 'depopstill.png'; // Correct the image filename
         } else if (element.id === 'tiktok-image') {
             tiktokImage.src = 'tiktokstill.png'; // Correct the image filename
         }
