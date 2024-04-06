@@ -1,12 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Get references to HTML elements
-    const chahanlerGif = document.getElementById('chahanler-gif');
     const depopsImage = document.getElementById('depops-image');
     const tiktokImage = document.getElementById('tiktok-image');
     const dividerImage = document.getElementById('divider-image');
-
-    // Set 'chahanler.gif' as background for the 'chahanler-gif' element
-    chahanlerGif.style.backgroundImage = "url('chahanler.gif')";
 
     // Function to change the image source to the animated GIF and rotate divider image
     function playGif(element) {
