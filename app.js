@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const depopsImage = document.getElementById('depops-image');
     const tiktokImage = document.getElementById('tiktok-image');
     const dividerImage = document.getElementById('divider-image');
-    let isDividerRotated = false; // Flag to track if the divider is rotated
+    let dividerRotated = false; // Variable to track if divider has been rotated
 
     // Function to change the image source to the animated GIF and rotate divider image
     function playGif(element) {
@@ -12,10 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (element.id === 'tiktok-image') {
             element.src = 'tiktokwiggle.gif'; // Update the source of the element passed as parameter
         }
-        if (!isDividerRotated) {
-            // Rotate the divider only if it's not already rotated
-            dividerImage.style.transform = 'rotate(' + (element.id === 'depops-image' ? '-180deg' : '180deg') + ')';
-            isDividerRotated = true; // Update the flag
+
+        // Rotate the divider GIF only if it hasn't been rotated yet
+        if (!dividerRotated) {
+            dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF
+            dividerRotated = true; // Set the flag to indicate divider has been rotated
         }
     }
 
@@ -26,25 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (element.id === 'tiktok-image') {
             element.src = 'tiktokstill.png'; // Update the source of the element passed as parameter
         }
-    }
-
-    // Function to play explode animation when divider is clicked
-    function playExplodeAnimation() {
-        console.log('Divider clicked!'); // Check if the click event is triggered
-        dividerImage.src = 'divider explode.gif'; // Ensure the correct path to the exploding GIF
-        setTimeout(() => {
-            console.log('Redirecting to /secret...');
-            // After animation, redirect to secret page
-            window.location.href = 'http://chahanler.com/secret';
-        }, 1000); // Adjust the delay time if needed
-    }
-
-    // Add event listener to dividerImage to trigger explode animation on click
-    if (dividerImage) {
-        console.log('Divider image found!');
-        dividerImage.addEventListener('click', playExplodeAnimation);
-    } else {
-        console.error('Divider image not found!');
     }
 
     // Add event listeners to TikTok and Depop images
