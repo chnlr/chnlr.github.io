@@ -69,6 +69,18 @@ body {
     width: 50px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
     margin: auto; /* Center the image horizontally */
+    transition: transform 0.5s ease; /* Smooth transition for transform change */
+    animation: spin 1s linear infinite; /* Apply rotation animation */
+}
+
+/* Animation keyframes for spinning */
+@keyframes spin {
+    from {
+        transform: rotate(0deg); /* Start rotation from 0 degrees */
+    }
+    to {
+        transform: rotate(360deg); /* End rotation at 360 degrees (full circle) */
+    }
 }
 
 /* Styling for Spotify containers */
