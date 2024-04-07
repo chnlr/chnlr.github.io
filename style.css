@@ -71,16 +71,7 @@ body {
     margin: auto; /* Center the image horizontally */
     position: relative; /* Ensure the element is positioned relative to its normal position */
     z-index: 5; /* Ensure the divider is above other elements */
-}
-
-/* Animation keyframes for spinning */
-@keyframes spin {
-    from {
-        transform: rotate(0deg); /* Start rotation from 0 degrees */
-    }
-    to {
-        transform: rotate(360deg); /* End rotation at 360 degrees (full circle) */
-    }
+    cursor: pointer; /* Change cursor to pointer */
 }
 
 /* Styling for Spotify containers */
