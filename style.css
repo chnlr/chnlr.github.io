@@ -70,7 +70,7 @@ body {
     height: auto; /* Maintain aspect ratio */
     margin: auto; /* Center the image horizontally */
     position: relative; /* Ensure the element is positioned relative to its normal position */
-    z-index: 1; /* Ensure the divider is above other elements */
+    z-index: 5; /* Ensure the divider is above other elements */
 }
 
 /* Animation keyframes for spinning */
