@@ -3,15 +3,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const depopsImage = document.getElementById('depops-image');
     const tiktokImage = document.getElementById('tiktok-image');
     const dividerImage = document.getElementById('divider-image');
+    let isDividerRotated = false; // Flag to track if the divider is rotated
 
     // Function to change the image source to the animated GIF and rotate divider image
     function playGif(element) {
         if (element.id === 'depops-image') {
             element.src = 'depopwiggle.gif'; // Update the source of the element passed as parameter
-            dividerImage.style.transform = 'rotate(-180deg)'; // Rotate the divider GIF for Depop
         } else if (element.id === 'tiktok-image') {
             element.src = 'tiktokwiggle.gif'; // Update the source of the element passed as parameter
-            dividerImage.style.transform = 'rotate(180deg)'; // Rotate the divider GIF for TikTok
+        }
+        if (!isDividerRotated) {
+            // Rotate the divider only if it's not already rotated
+            dividerImage.style.transform = 'rotate(' + (element.id === 'depops-image' ? '-180deg' : '180deg') + ')';
+            isDividerRotated = true; // Update the flag
         }
     }
 
@@ -22,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (element.id === 'tiktok-image') {
             element.src = 'tiktokstill.png'; // Update the source of the element passed as parameter
         }
-        dividerImage.style.transform = 'rotate(0deg)'; // Reset rotation for the divider GIF
     }
 
     // Function to play explode animation when divider is clicked
