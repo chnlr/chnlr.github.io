@@ -19,13 +19,15 @@ body {
     color: white; /* White text color */
     font-family: 'Daydream', monospace; /* Apply custom font family */
 }
-/* Position the clouds GIF above the Chahanler GIF */
-#clouds-mov {
+/* Position the clouds video above the Chahanler GIF */
+#clouds-video {
     position: absolute;
-    width: 500px;
+    width: 100%; /* Ensure the video covers the entire container */
     top: 0;
-    left: 5;
-    }
+    left: 0;
+    z-index: 1; /* Ensure the clouds video is above the Chahanler GIF */
+}
+
 /* Style the CHAHANLER GIF */
 #chahanler-gif {
     width: 500px; /* Adjust the width as needed */
