@@ -24,16 +24,15 @@ body {
 #chahanler-gif {
     width: 500px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: 20px auto; /* Center the image horizontally with a margin from top and bottom */
+    margin: 250px auto; /* Center the image horizontally with a margin from top and bottom */
     display: block; /* Ensure the image is displayed as a block element */
-    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Style the text below the heading */
 .links {
     font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
-    margin-top: -10px; /* Adjusted margin to move the container up */
+    margin-top: -350px; /* Adjusted margin to move the container up */
     opacity: 1;
     transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
@@ -47,7 +46,7 @@ body {
     color: inherit; /* Inherit color from parent */
     text-decoration: none; /* Remove default underline */
     transition: opacity 1s ease; /* Smooth transition for opacity change */
-    margin: 0 10px; /* Add margin between the links */
+    margin: 10px; /* Add margin between the links */
 }
 
 /* Style links on hover */
@@ -59,14 +58,10 @@ body {
 #depops-image,
 #tiktok-image,
 #divider-image {
-    width: 50px; /* Adjust the size as needed */
+    width: 140px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
-/* Styling for the divider image */
-#divider-image {
-    cursor: pointer; /* Change cursor to pointer */
-}
 
 /* Styling for Spotify containers */
 .spotify-container {
