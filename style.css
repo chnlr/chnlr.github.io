@@ -54,7 +54,8 @@ body {
 
 /* Style the "Depop" and "TikTok" images */
 #depops-image,
-#tiktok-image {
+#tiktok-image,
+#divider-image {
     width: 200px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
     margin: auto 5px; /* Center the image horizontally with 5px margin on both sides */
@@ -64,14 +65,8 @@ body {
 
 /* Styling for the divider image */
 #divider-image {
-    width: 50px; /* Adjust the size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: auto 5px; /* Center the image horizontally with 5px margin on both sides */
-    position: relative; /* Ensure the element is positioned relative to its normal position */
-    z-index: 5; /* Ensure the divider is above other elements */
     cursor: pointer; /* Change cursor to pointer */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
-    margin-bottom: 20px; /* Adjust the margin between the divider and the Chahanler GIF */
 }
 
 /* Styling for Spotify containers */
@@ -100,11 +95,8 @@ body {
     }
 
     #depops-image,
-    #tiktok-image {
-        width: 80%; /* Adjust the size for smaller screens */
-    }
-
+    #tiktok-image,
     #divider-image {
-        width: 30px; /* Adjust the size for smaller screens */
+        width: 80%; /* Adjust the size for smaller screens */
     }
 }
