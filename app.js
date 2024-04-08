@@ -43,6 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
         rotateDivider(0); // Rotate back to original position
     }
 
+    // Function to handle click event on divider image
+    function redirectToSecret() {
+        // Update the source of the divider image to the exploding GIF
+        dividerImage.src = 'divider explode.gif';
+        // Redirect to the secret page after a short delay (adjust the delay as needed)
+        setTimeout(function() {
+            window.location.href = 'https://chahanler.com/secret';
+        }, 1000); // 1000 milliseconds = 1 second
+    }
+
     // Add event listeners to TikTok and Depop images
     if (depopsImage && tiktokImage) {
         depopsImage.addEventListener('mouseover', handleDepopMouseOver);
@@ -51,14 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
         tiktokImage.addEventListener('mouseout', handleTikTokMouseOut);
     }
 
-    // Function to handle click event on divider image
-    function redirectToSecret() {
-        window.location.href = 'https://chahanler.com/secret';
-    }
-
-    // Add event listener to divider image
+    // Add event listener to divider image for click event
     if (dividerImage) {
         dividerImage.addEventListener('click', redirectToSecret);
-        dividerImage.style.cursor = 'pointer'; // Set cursor to pointer
-    }
+        }
 });
