@@ -24,9 +24,7 @@ body {
 #chahanler-gif {
     width: 500px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto; /* Center the image horizontally */
-    margin-top: 20vh; /* Adjusted margin */
-    margin-bottom: 20vh; /* Adjusted margin */
+    margin: 20px auto; /* Center the image horizontally with a margin from top and bottom */
     display: block; /* Ensure the image is displayed as a block element */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
@@ -35,11 +33,13 @@ body {
 .links {
     font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
-    margin-top: -20px; /* Adjusted margin to move the container up */
+    margin-top: -10px; /* Adjusted margin to move the container up */
     opacity: 1;
     transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
     flex-direction: row; /* Align items in a row */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
 }
 
 /* Style the links */
@@ -47,7 +47,7 @@ body {
     color: inherit; /* Inherit color from parent */
     text-decoration: none; /* Remove default underline */
     transition: opacity 1s ease; /* Smooth transition for opacity change */
-    margin: 5px; /* Add some margin between the links */
+    margin: 0 10px; /* Add margin between the links */
 }
 
 /* Style links on hover */
@@ -57,29 +57,20 @@ body {
 
 /* Style the "Depop" and "TikTok" images */
 #depops-image,
-#tiktok-image {
-    width: 150px; /* Adjust the size as needed */
+#tiktok-image,
+#divider-image {
+    width: 50px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto 5px; /* Center the image horizontally with margin between them */
-    transition: transform 0.5s ease; /* Smooth transition for transform change */
-    margin-bottom: 20px; /* Adjust the margin between the images and the Chahanler GIF */
 }
 
 /* Styling for the divider image */
 #divider-image {
-    width: 30px; /* Adjust the size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: auto 5px; /* Center the image horizontally with margin between them */
-    position: relative; /* Ensure the element is positioned relative to its normal position */
-    z-index: 5; /* Ensure the divider is above other elements */
     cursor: pointer; /* Change cursor to pointer */
-    transition: transform 0.5s ease; /* Smooth transition for transform change */
-    margin-bottom: 20px; /* Adjust the margin between the divider and the Chahanler GIF */
 }
 
 /* Styling for Spotify containers */
 .spotify-container {
-    margin-top: 10vh; /* Adjusted margin to move the playlists down */
+    margin-top: 20px; /* Adjusted margin from the Chahanler GIF */
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
     animation: fadeIn 1s ease-out forwards;
@@ -102,12 +93,11 @@ body {
         width: 90%; /* Adjust the width for smaller screens */
     }
 
-    #depops-image,
-    #tiktok-image {
-        width: 80%; /* Adjust the size for smaller screens */
+    .links a {
+        margin: 0 5px; /* Adjust margin between links for smaller screens */
     }
 
     #divider-image {
-        width: 20px; /* Adjust the size for smaller screens */
+        width: 30px; /* Adjust the size for smaller screens */
     }
 }
