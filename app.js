@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const tiktokImage = document.getElementById('tiktok-image');
     const dividerImage = document.getElementById('divider-image');
 
-    let dividerAnimationTriggered = false; // Flag to track if the animation has been triggered
-
     // Function to change the image source to the animated GIF
     function playGif(element, gifName) {
         element.src = gifName; // Update the source of the element passed as parameter
@@ -14,24 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to change the image source back to the static image
     function stopGif(element, staticImage) {
         element.src = staticImage; // Update the source of the element passed as parameter
-    }
-
-    // Function to handle mouseover event on TikTok image
-    function triggerDividerAnimation() {
-        // Play the animation only if it hasn't been triggered before
-        if (!dividerAnimationTriggered) {
-            playGif(dividerImage, 'divider_move.gif'); // Play the animation
-            dividerAnimationTriggered = true; // Set the flag to true
-        }
-    }
-
-    // Add event listeners to TikTok and Depop images
-    if (depopsImage && tiktokImage) {
-        depopsImage.addEventListener('mouseover', () => playGif(depopsImage, 'depopwiggle.gif'));
-        depopsImage.addEventListener('mouseout', () => stopGif(depopsImage, 'depopstill.png'));
-        // Add event listener to trigger divider animation when cursor goes over TikTok image
-        tiktokImage.addEventListener('mouseover', triggerDividerAnimation);
-        tiktokImage.addEventListener('mouseout', () => stopGif(tiktokImage, 'tiktokstill.png'));
     }
 
     // Function to handle click event on divider image
@@ -48,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000); // 1000 milliseconds = 1 second
     }
 
-    // Add event listener to divider image
+    // Add event listener to trigger redirection to secret page when clicking on divider image
     if (dividerImage) {
         dividerImage.addEventListener('click', redirectToSecret);
     }
