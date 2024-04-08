@@ -72,6 +72,7 @@ body {
     position: relative; /* Ensure the element is positioned relative to its normal position */
     z-index: 5; /* Ensure the divider is above other elements */
     cursor: pointer; /* Change cursor to pointer */
+    transition: transform 0.5s ease; /* Apply smooth transition for rotation */
 }
 
 /* Styling for Spotify containers */
