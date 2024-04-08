@@ -62,6 +62,7 @@ body {
     height: auto; /* Maintain aspect ratio */
     margin: auto; /* Center the image horizontally */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
+    margin-bottom: 20px; /* Adjust the margin between the images and the Chahanler GIF */
 }
 
 /* Styling for the divider image */
@@ -73,6 +74,7 @@ body {
     z-index: 5; /* Ensure the divider is above other elements */
     cursor: pointer; /* Change cursor to pointer */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
+    margin-bottom: 20px; /* Adjust the margin between the divider and the Chahanler GIF */
 }
 
 /* Styling for Spotify containers */
