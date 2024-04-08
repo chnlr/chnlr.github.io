@@ -20,7 +20,7 @@ body {
     font-family: 'Daydream', monospace; /* Apply custom font family */
 }
 /* Position the clouds GIF above the Chahanler GIF */
-#clouds-gif {
+#clouds-mov {
     position: absolute;
     width: 500px;
     top: 0;
