@@ -10,22 +10,25 @@
     <link rel="preload" href="chahanler.gif" as="image">
 </head>
 <body>
-    <div id="container">
-        <img id="clouds-mov" src="clouds.mov" alt="Clouds">
-        <img id="chahanler-gif" src="chahanler.gif" alt="CHAHANLER">
-        <div class="links fade-out" id="links">
-            <!-- Display the regular "TikTok" image -->
-            <a href="https://tiktok.com/@chahanler" target="_blank">
-                <img id="tiktok-image" class="link-image" src="tiktokstill.png" alt="TikTok">
-            </a>
-            <!-- Display the divider image -->
-            <img id="divider-image" class="link-image" src="divider still.png" alt="Divider">
-            <!-- Display the regular "Depop" image -->
-            <a href="https://depop.com/chanlr" target="_blank">
-                <img id="depops-image" class="link-image" src="depopstill.png" alt="Depop">
-            </a>
-        </div>
+<div id="container">
+    <video id="clouds-video" autoplay muted loop>
+        <source src="clouds.mov" type="video/quicktime">
+        Your browser does not support the video tag.
+    </video>
+    <img id="chahanler-gif" src="chahanler.gif" alt="CHAHANLER">
+    <div class="links fade-out" id="links">
+        <!-- Display the regular "TikTok" image -->
+        <a href="https://tiktok.com/@chahanler" target="_blank">
+            <img id="tiktok-image" class="link-image" src="tiktokstill.png" alt="TikTok">
+        </a>
+        <!-- Display the divider image -->
+        <img id="divider-image" class="link-image" src="divider still.png" alt="Divider">
+        <!-- Display the regular "Depop" image -->
+        <a href="https://depop.com/chanlr" target="_blank">
+            <img id="depops-image" class="link-image" src="depopstill.png" alt="Depop">
+        </a>
     </div>
+</div>
 
     <!-- Spotify Playlist Embeds -->
     <div id="playlist-container" class="spotify-container">
