@@ -4,32 +4,39 @@ document.addEventListener('DOMContentLoaded', function () {
     const tiktokImage = document.getElementById('tiktok-image');
     const dividerImage = document.getElementById('divider-image');
 
-    // Function to change the image source to the animated GIF
-    function playGif(element, gifName) {
-        element.src = gifName; // Update the source of the element passed as parameter
+    let rotationDirection = ''; // Variable to store rotation direction
+
+    // Function to rotate the divider image based on direction
+    function rotateDivider(direction) {
+        if (direction === 'clockwise') {
+            dividerImage.style.transform = 'rotate(180deg)'; // Rotate 180 degrees clockwise
+        } else if (direction === 'counterclockwise') {
+            dividerImage.style.transform = 'rotate(-180deg)'; // Rotate 180 degrees counterclockwise
+        }
     }
 
-    // Function to change the image source back to the static image
-    function stopGif(element, staticImage) {
-        element.src = staticImage; // Update the source of the element passed as parameter
+    // Function to handle mouseover event on TikTok image
+    function handleTikTokHover() {
+        rotationDirection = 'counterclockwise'; // Set rotation direction for TikTok
+        rotateDivider(rotationDirection); // Rotate divider image
     }
 
-    // Function to handle click event on divider image
-    function redirectToSecret() {
-        // Get reference to the divider image
-        const dividerImage = document.getElementById('divider-image');
-        
-        // Update the source of the divider image to the exploding GIF
-        dividerImage.src = 'divider explode.gif';
-
-        // Redirect to the secret page after a short delay (adjust the delay as needed)
-        setTimeout(function() {
-            window.location.href = 'https://chahanler.com/secret';
-        }, 1000); // 1000 milliseconds = 1 second
+    // Function to handle mouseover event on Depop image
+    function handleDepopHover() {
+        rotationDirection = 'clockwise'; // Set rotation direction for Depop
+        rotateDivider(rotationDirection); // Rotate divider image
     }
 
-    // Add event listener to trigger redirection to secret page when clicking on divider image
-    if (dividerImage) {
-        dividerImage.addEventListener('click', redirectToSecret);
+    // Function to reset the rotation of the divider image
+    function resetDividerRotation() {
+        dividerImage.style.transform = ''; // Reset rotation
+    }
+
+    // Add event listeners to TikTok and Depop images
+    if (depopsImage && tiktokImage) {
+        tiktokImage.addEventListener('mouseover', handleTikTokHover);
+        tiktokImage.addEventListener('mouseout', resetDividerRotation);
+        depopsImage.addEventListener('mouseover', handleDepopHover);
+        depopsImage.addEventListener('mouseout', resetDividerRotation);
     }
 });
