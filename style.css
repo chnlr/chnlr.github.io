@@ -60,6 +60,7 @@ body {
 #divider-image {
     width: 140px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth transition for transform change */
 }
 
 
