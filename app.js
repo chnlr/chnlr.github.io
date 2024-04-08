@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const dividerImage = document.getElementById('divider-image');
         
         // Update the source of the divider image to the exploding GIF
-        dividerImage.src = 'divider_explode.gif';
+        dividerImage.src = 'divider explode.gif';
 
         // Redirect to the secret page after a short delay (adjust the delay as needed)
         setTimeout(function() {
