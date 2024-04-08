@@ -60,7 +60,7 @@ body {
 #tiktok-image {
     width: 150px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto; /* Center the image horizontally */
+    margin: auto 5px; /* Center the image horizontally with margin between them */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
     margin-bottom: 20px; /* Adjust the margin between the images and the Chahanler GIF */
 }
@@ -69,7 +69,7 @@ body {
 #divider-image {
     width: 30px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto; /* Center the image horizontally */
+    margin: auto 5px; /* Center the image horizontally with margin between them */
     position: relative; /* Ensure the element is positioned relative to its normal position */
     z-index: 5; /* Ensure the divider is above other elements */
     cursor: pointer; /* Change cursor to pointer */
