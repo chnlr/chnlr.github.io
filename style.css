@@ -24,9 +24,7 @@ body {
 #chahanler-gif {
     width: 500px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto; /* Center the image horizontally */
-    margin-top: 20vh; /* Adjusted margin */
-    margin-bottom: 20vh; /* Adjusted margin */
+    margin: 10px auto; /* Center the image horizontally with margin-top */
     display: block; /* Ensure the image is displayed as a block element */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
@@ -35,7 +33,6 @@ body {
 .links {
     font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
-    margin-top: -20px; /* Adjusted margin to move the container up */
     opacity: 1;
     transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
@@ -60,7 +57,7 @@ body {
 #tiktok-image {
     width: 200px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto; /* Center the image horizontally */
+    margin: auto 5px; /* Center the image horizontally with 5px margin on both sides */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
     margin-bottom: 20px; /* Adjust the margin between the images and the Chahanler GIF */
 }
@@ -69,7 +66,7 @@ body {
 #divider-image {
     width: 50px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto; /* Center the image horizontally */
+    margin: auto 5px; /* Center the image horizontally with 5px margin on both sides */
     position: relative; /* Ensure the element is positioned relative to its normal position */
     z-index: 5; /* Ensure the divider is above other elements */
     cursor: pointer; /* Change cursor to pointer */
@@ -111,4 +108,3 @@ body {
         width: 30px; /* Adjust the size for smaller screens */
     }
 }
-
