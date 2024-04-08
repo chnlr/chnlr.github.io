@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const tiktokImage = document.getElementById('tiktok-image');
     const dividerImage = document.getElementById('divider-image');
 
+    let dividerAnimationTriggered = false; // Flag to track if the animation has been triggered
+
     // Function to change the image source to the animated GIF
     function playGif(element, gifName) {
         element.src = gifName; // Update the source of the element passed as parameter
@@ -16,9 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to handle mouseover event on TikTok image
     function triggerDividerAnimation() {
-        playGif(dividerImage, 'divider move.gif'); // Play the animation
-        // Remove the event listener after the animation is triggered
-        tiktokImage.removeEventListener('mouseover', triggerDividerAnimation);
+        // Play the animation only if it hasn't been triggered before
+        if (!dividerAnimationTriggered) {
+            playGif(dividerImage, 'divider_move.gif'); // Play the animation
+            dividerAnimationTriggered = true; // Set the flag to true
+        }
     }
 
     // Add event listeners to TikTok and Depop images
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const dividerImage = document.getElementById('divider-image');
         
         // Update the source of the divider image to the exploding GIF
-        dividerImage.src = 'divider explode.gif';
+        dividerImage.src = 'divider_explode.gif';
 
         // Redirect to the secret page after a short delay (adjust the delay as needed)
         setTimeout(function() {
