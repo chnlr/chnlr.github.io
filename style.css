@@ -56,9 +56,7 @@ body {
 #depops-image,
 #tiktok-image,
 #divider-image {
-    width: 200px; /* Adjust the size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto 5px; /* Center the image horizontally with 5px margin on both sides */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
     margin-bottom: 20px; /* Adjust the margin between the images and the Chahanler GIF */
 }
@@ -95,8 +93,11 @@ body {
     }
 
     #depops-image,
-    #tiktok-image,
-    #divider-image {
+    #tiktok-image {
         width: 80%; /* Adjust the size for smaller screens */
+    }
+
+    #divider-image {
+        width: 30px; /* Adjust the size for smaller screens */
     }
 }
