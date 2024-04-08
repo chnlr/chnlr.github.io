@@ -24,7 +24,7 @@ body {
 #chahanler-gif {
     width: 500px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: 250px auto; /* Center the image horizontally with a margin from top and bottom */
+    margin: 230px auto; /* Center the image horizontally with a margin from top and bottom */
     display: block; /* Ensure the image is displayed as a block element */
 }
 
@@ -32,7 +32,7 @@ body {
 .links {
     font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
-    margin-top: -350px; /* Adjusted margin to move the container up */
+    margin-top: -340px; /* Adjusted margin to move the container up */
     opacity: 1;
     transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
