@@ -66,21 +66,9 @@ body {
 
 /* Styling for Spotify containers */
 .spotify-container {
-    margin-top: 20px; /* Adjusted margin from the Chahanler GIF */
+    margin-top: 300px; /* Adjusted margin from the Chahanler GIF */
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
-    animation: fadeIn 1s ease-out forwards;
-    opacity: 100; /* Initially hide the playlists */
-}
-
-/* Animation keyframes */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 /* Media query for smaller screens */
@@ -97,4 +85,3 @@ body {
         width: 30px; /* Adjust the size for smaller screens */
     }
 }
-
