@@ -65,11 +65,18 @@ body {
 
 
 /* Styling for Spotify containers */
-.spotify-container {
-    margin-top: 300px; /* Adjusted margin from the Chahanler GIF */
+#playlist-container {
+    margin-top: 350px; /* Adjusted margin from the Chahanler GIF */
     width: 100%; /* Make each container occupy the full width */
     max-width: 600px; /* Set a maximum width to avoid overlapping */
 }
+
+#playlist2-container {
+    margin-top: 20px; /* Adjusted margin from the first Spotify playlist */
+    width: 100%; /* Make each container occupy the full width */
+    max-width: 600px; /* Set a maximum width to avoid overlapping */
+}
+
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
