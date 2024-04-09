@@ -32,7 +32,7 @@ body {
 .links {
     font-size: 18px; /* Smaller font size */
     color: #777; /* Darker grey text color */
-    margin-top: -340px; /* Adjusted margin to move the container up */
+    margin-top: -300px; /* Adjusted margin to move the container up */
     opacity: 1;
     transition: opacity 1s ease; /* Smooth transition for opacity change */
     display: flex;
@@ -46,7 +46,7 @@ body {
     color: inherit; /* Inherit color from parent */
     text-decoration: none; /* Remove default underline */
     transition: opacity 1s ease; /* Smooth transition for opacity change */
-    margin: 10px; /* Add margin between the links */
+    margin: 20px; /* Add margin between the links */
 }
 
 /* Style links on hover */
