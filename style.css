@@ -111,3 +111,32 @@ body {
         transform: translate(-5px, -3px); /* Move the circles right */
     }
 }
+
+#audio-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Your existing CSS styles */
+
+#play-pause-button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white; /* Set button color to white */
+}
+
+#play-pause-button:hover {
+    color: #ccc; /* Light grey color on hover */
+}
+
+#play-pause-button.play:before {
+    content: '\25B6'; /* Play symbol */
+}
+
+#play-pause-button.pause:before {
+    content: '\275A\275A'; /* Pause symbol */
+}
