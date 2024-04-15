@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const cloudsContainer = document.getElementById('clouds-container');
     const secondCloudContainer = document.getElementById('second-cloud-container');
     const droopyAudio = document.getElementById('droopy-audio');
-    const audioControls = document.getElementById('audio-controls');
+    const playPauseButton = document.getElementById('play-pause-button');
+    const musicPlayImage = document.getElementById('music-play-image');
+    const musicPauseImage = document.getElementById('music-pause-image');
 
     // Function to change the image source to the animated GIF
     function playGif(element, gifName) {
@@ -143,23 +145,46 @@ document.addEventListener('DOMContentLoaded', function () {
     // Create the second cloud with custom animation properties
     createSecondCloud(90, 10, 10, 3, 2); // Second cloud with animation duration of 3 seconds, starting after 2 seconds
 
-    // Function to toggle play/pause of the audio
+    // Function to toggle play/pause of the audio and switch between play and pause images
     function togglePlayPause() {
         if (droopyAudio.paused) {
             droopyAudio.play();
-            playPauseButton.innerHTML = '&#10074;&#10074;'; // Pause symbol
+            // Hide play image and show pause image
+            musicPlayImage.style.display = 'none';
+            musicPauseImage.style.display = 'block';
+            // Trigger play gif animation
+            musicPauseImage.src = 'musicpause.gif';
+            // After gif animation ends, switch back to pause png
+            setTimeout(showPauseImage, 1000); // Adjust time according to gif duration
         } else {
             droopyAudio.pause();
-            playPauseButton.innerHTML = '&#9658;'; // Play symbol
+            // Hide pause image and show play image
+            musicPauseImage.style.display = 'none';
+            musicPlayImage.style.display = 'block';
+            // Trigger pause gif animation
+            musicPlayImage.src = 'musicplay.gif';
+            // After gif animation ends, switch back to play png
+            setTimeout(showPlayImage, 1000); // Adjust time according to gif duration
         }
     }
 
-    // Add event listener to the play/pause button
-    if (audioControls) {
-        const playPauseButton = document.getElementById('play-pause-button');
-        playPauseButton.addEventListener('click', togglePlayPause);
+    // Function to show play image and hide pause image
+    function showPlayImage() {
+        musicPlayImage.style.display = 'block';
+        musicPauseImage.style.display = 'none';
+        musicPlayImage.src = 'musicplay.png';
     }
 
-    // Play the audio when the webpage loads
-    droopyAudio.play();
+    // Function to show pause image and hide play image
+    function showPauseImage() {
+        musicPauseImage.style.display = 'block';
+        musicPlayImage.style.display = 'none';
+        musicPauseImage.src = 'musicpause.png';
+    }
+
+    // Add event listener to play/pause images to toggle play/pause and trigger gif animation
+    if (musicPlayImage && musicPauseImage) {
+        musicPlayImage.addEventListener('click', togglePlayPause, { once: true });
+        musicPauseImage.addEventListener('click', togglePlayPause, { once: true });
+    }
 });
