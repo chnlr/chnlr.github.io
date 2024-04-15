@@ -1,0 +1,94 @@
+/* Styles for the TikTok Downloader page with a fun and bubbly design, including random circles and gradients */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f6e58d, #fd79a8); /* Background gradient */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.container {
+    max-width: 500px;
+    background-color: #fff; /* Container background color: white */
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure container appears above circles */
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #6c5ce7; /* Heading color: soft purple */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 18px;
+    color: #555; /* Label color: dark grey */
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 15px; /* Rounded corners */
+    background-color: #f5f5f5; /* Input background color: light grey */
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow */
+}
+
+button {
+    background: linear-gradient(135deg, #ff6b6b, #ffdd59); /* Button gradient */
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff4d4d, #ffc048); /* Button gradient on hover */
+}
+
+#downloadLink {
+    font-size: 16px;
+    color: #6c5ce7; /* Download link color: soft purple */
+    margin-top: 20px;
+}
+
+/* Random circles */
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.2); /* Circle color with opacity */
+    border-radius: 50%;
+    z-index: 0; /* Ensure circles appear behind other content */
+    animation: move 10s infinite alternate linear; /* Animation properties */
+}
+
+/* Define animation for circles */
+@keyframes move {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-300px) rotate(360deg);
+    }
+}
