@@ -11,13 +11,9 @@
 </head>
 <body>
     <div id="container">
-    <div class="cloud-container"></div>
         <img id="chahanler-gif" src="chahanler.gif" alt="CHAHANLER">
         <div id="clouds-container" class="clouds-container">
             <!-- Cloud elements will be dynamically added here -->
-            <div class="cloud"></div>
-            <div class="cloud"></div>
-            <div class="cloud"></div>
         </div>
         <div class="links fade-out" id="links">
             <!-- Display the regular "TikTok" image -->
@@ -42,32 +38,5 @@
         <iframe id="playlist2" style="border-radius: 12px" src="https://open.spotify.com/embed/playlist/7cOm43yf9qVxU28z9wWMNA?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <script src="app.js"></script> <!-- Include JavaScript file -->
-    <script>
-        // Get reference to the clouds container
-        const cloudsContainer = document.getElementById('clouds-container');
-
-        // Function to create a cloud element
-        function createCloud() {
-            const cloud = document.createElement('div'); // Create a div element
-            cloud.classList.add('cloud'); // Add 'cloud' class to the div
-
-            // Set random position and size for the cloud
-            const size = Math.random() * 100 + 50; // Random size between 50 and 150 pixels
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-
-            cloud.style.width = `${size}px`; // Set width of the cloud
-            cloud.style.height = `${size}px`; // Set height of the cloud
-            cloud.style.left = `${x}px`; // Set left position of the cloud
-            cloud.style.top = `${y}px`; // Set top position of the cloud
-
-            cloudsContainer.appendChild(cloud); // Append the cloud to the clouds container
-        }
-
-        // Generate 5 clouds
-        for (let i = 0; i < 5; i++) {
-            createCloud();
-        }
-    </script>
 </body>
 </html>
