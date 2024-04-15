@@ -39,7 +39,9 @@
     <audio id="droopy-audio" src="droopy.mp3" preload="auto" loop volume="0.04"></audio>
 
     <div id="audio-controls">
-        <button id="play-pause-button">&#9658;</button> <!-- Play button -->
+        <!-- Play/pause button with play and pause images -->
+        <img id="music-play-image" src="musicplay.png" alt="Play" onclick="playAudio()">
+        <img id="music-pause-image" src="musicpause.png" alt="Pause" style="display: none;">
     </div>
 
     <div id="playlist2-container" class="spotify-container">
