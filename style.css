@@ -20,6 +20,11 @@ body {
     font-family: 'Daydream', monospace; /* Apply custom font family */
 }
 
+/* Container for clouds and Chahanler GIF */
+.cloud-container {
+    position: relative; /* Set position to relative */
+}
+
 /* Style the CHAHANLER GIF */
 #chahanler-gif {
     width: 500px; /* Adjust the width as needed */
@@ -63,7 +68,6 @@ body {
     transition: transform 0.5s ease; /* Smooth transition for transform change */
 }
 
-
 /* Styling for Spotify containers */
 #playlist-container {
     margin-top: 350px; /* Adjusted margin from the Chahanler GIF */
@@ -77,18 +81,31 @@ body {
     max-width: 600px; /* Set a maximum width to avoid overlapping */
 }
 
+/* Style for clouds */
+.cloud-container {
+    position: relative; /* Set position to relative */
+    margin-top: -080px; /* Set margin bottom to accommodate Chahanler GIF */
+    z-index: 1; /* Set a higher z-index to keep clouds above other elements */
+}
 
-/* Media query for smaller screens */
-@media only screen and (max-width: 600px) {
-    #chahanler-gif {
-        width: 90%; /* Adjust the width for smaller screens */
+/* Styling for clouds */
+.cloud {
+    background-color: #fff; /* White background color for clouds */
+    border-radius: 50%; /* Make the clouds circular */
+    position: absolute; /* Position clouds absolutely */
+    animation: float 5s infinite ease-in-out alternate; /* Apply animation to float clouds */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    z-index: 1; /* Set a higher z-index to keep clouds above other elements */
+}
+
+/* Keyframes for cloud floating animation */
+@keyframes float {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0.5;
     }
-
-    .links a {
-        margin: 0 5px; /* Adjust margin between links for smaller screens */
-    }
-
-    #divider-image {
-        width: 30px; /* Adjust the size for smaller screens */
+    100% {
+        transform: translateX(50px);
+        opacity: 1;
     }
 }
