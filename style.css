@@ -46,6 +46,20 @@ body {
     justify-content: center; /* Center items horizontally */
 }
 
+.about-me-bubble {
+    background-color: #fff; /* White background color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Add padding to the content */
+    margin-top: 20px; /* Adjust margin from the links */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    color: #000; /* Black text color */
+}
+
+.about-me-bubble p {
+    margin: 0; /* Remove default margin for paragraphs */
+}
+
 /* Style the links */
 .links a {
     color: inherit; /* Inherit color from parent */
@@ -62,8 +76,10 @@ body {
 /* Style the "Depop" and "TikTok" images */
 #depops-image,
 #tiktok-image,
-#divider-image {
-    width: 140px; /* Adjust the size as needed */
+#divider-image,
+#music-play-image,
+#music-pause-image {
+    width: 100px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     transition: transform 0.5s ease; /* Smooth transition for transform change */
 }
@@ -125,13 +141,6 @@ body {
     top: 20px;
     right: 20px;
     z-index: 9999;
-}
-
-/* Smaller size for play/pause images */
-#music-play-image,
-#music-pause-image {
-    width: 40px;
-    height: 40px;
 }
 
 /* Media query for smaller screens */
