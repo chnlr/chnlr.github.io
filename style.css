@@ -119,26 +119,35 @@ body {
     z-index: 9999;
 }
 
-/* Your existing CSS styles */
-
-#play-pause-button {
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white; /* Set button color to white */
+/* Position and style for play/pause button */
+#audio-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
 }
 
-#play-pause-button:hover {
-    color: #ccc; /* Light grey color on hover */
+/* Smaller size for play/pause images */
+#music-play-image,
+#music-pause-image {
+    width: 40px;
+    height: 40px;
 }
 
-#play-pause-button.play:before {
-    content: '\25B6'; /* Play symbol */
-}
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    /* Adjusted position for smaller screens */
+    #audio-controls {
+        top: 10px;
+        right: 10px;
+    }
 
-#play-pause-button.pause:before {
-    content: '\275A\275A'; /* Pause symbol */
+    /* Smaller size for play/pause images on smaller screens */
+    #music-play-image,
+    #music-pause-image {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 /* Media query for smaller screens */
