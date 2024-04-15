@@ -84,24 +84,30 @@ body {
 /* CSS styles for clouds container */
 #clouds-container {
     position: absolute; /* Set position to absolute */
-    top: 50px; /* Adjust the top position to move the container up */
+    top: 20px; /* Adjust the top position to move the container up */
 }
 
-.cloud {
-    background-color: #fff; /* White background color for clouds */
-    border-radius: 50%; /* Make the clouds circular */
-    position: absolute; /* Position clouds absolutely */
+#second-cloud-container {
+    position: absolute;
+    top: 20px;
+    left: 360px;
+}
+
+.circle {
+    background-color: #fff; /* White background color for circles */
+    border-radius: 50%; /* Make the circles circular */
+    position: absolute; /* Position circles absolutely */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-    z-index: 1; /* Set a higher z-index to keep clouds above other elements */
+    z-index: 1; /* Set a higher z-index to keep circles above other elements */
     animation: float 3s infinite alternate; /* Add animation for floating effect */
 }
 
-/* Keyframes for cloud floating animation */
+/* Keyframes for circle floating animation */
 @keyframes float {
     0% {
-        transform: translate(10px, 4px); /* Move the clouds left */
+        transform: translate(10px, 4px); /* Move the circles left */
     }
     100% {
-        transform: translate(-5px, -3px); /* Move the clouds right */
+        transform: translate(-5px, -3px); /* Move the circles right */
     }
 }
