@@ -24,5 +24,22 @@
     </audio>
 
     <script src="download-app.js"></script> <!-- Include JavaScript file -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+    <script>
+        $(document).ready(function() {
+            $('#downloadForm').submit(function(event) {
+                event.preventDefault();
+                var tiktokLink = $('#tiktokLink').val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'download.py',
+                    data: {url: tiktokLink},
+                    success: function(response) {
+                        $('#downloadLink').html('<a href="' + response + '" download>Download TikTok Video</a>');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
