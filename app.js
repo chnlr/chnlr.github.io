@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const depopsImage = document.getElementById('depops-image');
     const tiktokImage = document.getElementById('tiktok-image');
     const dividerImage = document.getElementById('divider-image');
+    const cloudsContainer = document.getElementById('clouds-container');
 
     // Function to change the image source to the animated GIF
     function playGif(element, gifName) {
@@ -65,4 +66,27 @@ document.addEventListener('DOMContentLoaded', function () {
     if (dividerImage) {
         dividerImage.addEventListener('click', redirectToSecret);
         }
+
+    // Function to create a cloud element
+    function createCloud(size, left, top) {
+        const cloud = document.createElement('div'); // Create a div element
+        cloud.classList.add('cloud'); // Add 'cloud' class to the div
+
+        // Set size for the cloud
+        cloud.style.width = `${size}px`; // Set width of the cloud
+        cloud.style.height = `${size}px`; // Set height of the cloud
+
+        // Set position for the cloud
+        cloud.style.left = `${left}px`; // Set left position of the cloud
+        cloud.style.top = `${top}px`; // Set top position of the cloud
+
+        cloudsContainer.appendChild(cloud); // Append the cloud to the clouds container
+    }
+
+    // Create the clouds
+    createCloud(150, 100, 100); // Large cloud
+    createCloud(120, 40, 130); // Medium cloud right
+    createCloud(100, 200, 150); // Medium cloud left
+    createCloud(70, 145, 150); // Small cloud behind
+    createCloud(95, 130, 160); // Small cloud in the front
 });
