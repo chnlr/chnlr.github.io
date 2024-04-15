@@ -140,3 +140,24 @@ body {
 #play-pause-button.pause:before {
     content: '\275A\275A'; /* Pause symbol */
 }
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    #chahanler-gif {
+        width: 100%; /* Set width to fill smaller screens */
+        margin: 50px auto; /* Adjust margin for smaller screens */
+    }
+
+    .links {
+        margin-top: 50px; /* Adjusted margin for smaller screens */
+    }
+
+    #playlist-container {
+        margin-top: 50px; /* Adjusted margin for smaller screens */
+    }
+
+    #playlist2-container {
+        margin-top: 20px; /* Adjusted margin for smaller screens */
+    }
+}
