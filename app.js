@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const dividerImage = document.getElementById('divider-image');
     const cloudsContainer = document.getElementById('clouds-container');
     const secondCloudContainer = document.getElementById('second-cloud-container');
+    const droopyAudio = document.getElementById('droopy-audio');
+    const audioControls = document.getElementById('audio-controls');
 
     // Function to change the image source to the animated GIF
     function playGif(element, gifName) {
@@ -140,4 +142,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Create the second cloud with custom animation properties
     createSecondCloud(90, 10, 10, 3, 2); // Second cloud with animation duration of 3 seconds, starting after 2 seconds
+
+    // Function to toggle play/pause of the audio
+    function togglePlayPause() {
+        if (droopyAudio.paused) {
+            droopyAudio.play();
+            playPauseButton.innerHTML = '&#10074;&#10074;'; // Pause symbol
+        } else {
+            droopyAudio.pause();
+            playPauseButton.innerHTML = '&#9658;'; // Play symbol
+        }
+    }
+
+    // Add event listener to the play/pause button
+    if (audioControls) {
+        const playPauseButton = document.getElementById('play-pause-button');
+        playPauseButton.addEventListener('click', togglePlayPause);
+    }
+
+    // Play the audio when the webpage loads
+    droopyAudio.play();
 });
