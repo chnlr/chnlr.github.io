@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const droopyAudio = document.getElementById('droopy-audio');
     const musicPlayImage = document.getElementById('music-play-image');
     const musicPauseImage = document.getElementById('music-pause-image');
-    const depopsClickImage = document.getElementById('depops-click-image');
     
     // Preload the GIFs
     const musicPlayGif = new Image();
@@ -58,24 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
         rotateDivider(0); // Rotate back to original position
     }
 
-    // Function to handle click event on Depop image
-function handleDepopClick() {
-    // Hide the still image and show the click image
-    depopsClickImage.style.display = 'block';
-
-    // Set a timeout to hide the click image after a short delay
-    setTimeout(function() {
-        depopsClickImage.style.display = 'none';
-        // Open the Depop link in a new tab
-        window.open('https://depop.com/chanlr', '_blank');
-    }, 500); // Adjust the delay as needed
-}
-
     // Function to handle click event on divider image
     function redirectToSecret() {
-        // Update the source of the divider image to the exploding GIF
         dividerImage.src = 'divider explode.gif';
-        // Redirect to the secret page after a short delay (adjust the delay as needed)
         setTimeout(function() {
             window.location.href = 'https://chahanler.com/secret';
         }, 1000); // 1000 milliseconds = 1 second
