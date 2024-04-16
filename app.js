@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const droopyAudio = document.getElementById('droopy-audio');
     const musicPlayImage = document.getElementById('music-play-image');
     const musicPauseImage = document.getElementById('music-pause-image');
+    const depopsClickImage = document.getElementById('depops-click-image');
     
     // Preload the GIFs
     const musicPlayGif = new Image();
@@ -56,6 +57,19 @@ document.addEventListener('DOMContentLoaded', function () {
         stopGif(depopsImage, 'depopstill.png');
         rotateDivider(0); // Rotate back to original position
     }
+
+    // Function to handle click event on Depop image
+function handleDepopClick() {
+    // Hide the still image and show the click image
+    depopsClickImage.style.display = 'block';
+
+    // Set a timeout to hide the click image after a short delay
+    setTimeout(function() {
+        depopsClickImage.style.display = 'none';
+        // Open the Depop link in a new tab
+        window.open('https://depop.com/chanlr', '_blank');
+    }, 500); // Adjust the delay as needed
+}
 
     // Function to handle click event on divider image
     function redirectToSecret() {
