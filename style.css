@@ -159,8 +159,20 @@ body {
     }
 }
 
-/* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
+    /* Adjusted position for smaller screens */
+    #audio-controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Smaller size for play/pause images on smaller screens */
+    #music-play-image,
+    #music-pause-image {
+        width: 30px;
+        height: 30px;
+    }
+
     /* Adjust styles for smaller screens */
     #chahanler-gif {
         width: 100%; /* Set width to fill smaller screens */
@@ -180,11 +192,14 @@ body {
     }
 
     /* Adjust clouds positioning for smaller screens */
-    #clouds-container {
-        top: 10px; /* Adjust the top position of the clouds */
+    .cloud-container {
+        position: relative; /* Reset position */
+        top: 0; /* Reset top position */
     }
 
+    #clouds-container,
     #second-cloud-container {
-        top: 2px; /* Adjust the top position of the second clouds */
+        position: absolute; /* Set position to absolute */
+        top: 10px; /* Adjust the top position of the clouds */
     }
 }
