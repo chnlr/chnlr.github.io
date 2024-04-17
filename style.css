@@ -177,7 +177,7 @@ body {
     /* Adjust styles for smaller screens */
     #chahanler-gif {
         width: 100%; /* Set width to fill smaller screens */
-        margin: 80px; /* Adjust margin for smaller screens */
+        margin: 50px; /* Adjust margin for smaller screens */
     }
 
     .links {
