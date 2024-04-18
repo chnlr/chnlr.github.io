@@ -161,27 +161,14 @@ body {
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
-    /* Adjusted position for smaller screens */
-    #audio-controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    /* Smaller size for play/pause images on smaller screens */
-    #music-play-image,
-    #music-pause-image {
-        width: 30px;
-        height: 30px;
-    }
-
     /* Adjust styles for smaller screens */
     #chahanler-gif {
         width: 100%; /* Set width to fill smaller screens */
-        margin: auto; /* Center the element horizontally */
+        margin-top: 170px auto; /* Adjust margin for smaller screens */
     }
 
     .links {
-        margin-top: 50px; /* Adjusted margin for smaller screens */
+        margin-top: -300px; /* Adjusted margin for smaller screens */
     }
 
     #playlist-container {
@@ -193,14 +180,12 @@ body {
     }
 
     /* Adjust clouds positioning for smaller screens */
-    .cloud-container {
-        position: relative; /* Reset position */
-        top: 0; /* Reset top position */
+    #clouds-container {
+        top: 10px; /* Adjust the top position of the clouds */
     }
 
-    #clouds-container,
     #second-cloud-container {
-        position: absolute; /* Set position to absolute */
-        top: 10px; /* Adjust the top position of the clouds */
+        top: 2px;
+        left: 200px; /* Adjust the top position of the second clouds */
     }
 }
