@@ -20,22 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to initiate the TikTok video download process
     function downloadTikTokVideo(videoUrl) {
-        // You can replace this with your actual logic to download the TikTok video
-        // For demonstration purposes, let's assume the video is being downloaded from a server endpoint
-        const downloadUrl = 'https://example.com/download?videoUrl=' + encodeURIComponent(videoUrl);
-        initiateDownload(downloadUrl);
-    }
-
-    // Function to initiate the download process
-    function initiateDownload(downloadUrl) {
-        // Create a temporary anchor element to trigger the download
-        const anchor = document.createElement('a');
-        anchor.href = downloadUrl;
-        anchor.download = 'tiktok_video.mp4'; // Set the default file name
-        anchor.style.display = 'none';
-        document.body.appendChild(anchor);
-        anchor.click(); // Trigger the download
-        document.body.removeChild(anchor); // Clean up
+        fetch('https://cors-anywhere.herokuapp.com/' + videoUrl)
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'tiktok_video.mp4'; // You can set the filename here
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => console.error('Error:', error));
     }
 
     // Generate random circles with individual oscillation times
@@ -68,4 +65,3 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(circle);
     }
 });
-
