@@ -23,13 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // You can replace this with your actual logic to download the TikTok video
         // For demonstration purposes, let's assume the video is being downloaded from a server endpoint
         const downloadUrl = 'https://example.com/download?videoUrl=' + encodeURIComponent(videoUrl);
-        displayDownloadLink(downloadUrl);
+        initiateDownload(downloadUrl);
     }
 
-    // Function to display the download link after successful download initiation
-    function displayDownloadLink(downloadUrl) {
-        const downloadLinkContainer = document.getElementById("downloadLink");
-        downloadLinkContainer.innerHTML = `<a href="${downloadUrl}" download>Download TikTok Video</a>`;
+    // Function to initiate the download process
+    function initiateDownload(downloadUrl) {
+        // Create a temporary anchor element to trigger the download
+        const anchor = document.createElement('a');
+        anchor.href = downloadUrl;
+        anchor.download = 'tiktok_video.mp4'; // Set the default file name
+        anchor.style.display = 'none';
+        document.body.appendChild(anchor);
+        anchor.click(); // Trigger the download
+        document.body.removeChild(anchor); // Clean up
     }
 
     // Generate random circles with individual oscillation times
