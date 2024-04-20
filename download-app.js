@@ -1,8 +1,38 @@
-// JavaScript for generating random circles with individual oscillation times
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.querySelector('body');
+    const container = document.querySelector('.container');
 
-    // Generate 10 random circles
+    // Function to handle form submission and initiate download process
+    document.getElementById("downloadForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const tiktokLink = document.getElementById("tiktokLink").value;
+        if (isValidTikTokLink(tiktokLink)) {
+            downloadTikTokVideo(tiktokLink);
+        } else {
+            alert("Invalid TikTok video link");
+        }
+    });
+
+    // Function to check if the provided TikTok link is valid
+    function isValidTikTokLink(link) {
+        // You can add your validation logic here
+        return link.trim() !== "";
+    }
+
+    // Function to initiate the TikTok video download process
+    function downloadTikTokVideo(videoUrl) {
+        // You can replace this with your actual logic to download the TikTok video
+        // For demonstration purposes, let's assume the video is being downloaded from a server endpoint
+        const downloadUrl = 'https://example.com/download?videoUrl=' + encodeURIComponent(videoUrl);
+        displayDownloadLink(downloadUrl);
+    }
+
+    // Function to display the download link after successful download initiation
+    function displayDownloadLink(downloadUrl) {
+        const downloadLinkContainer = document.getElementById("downloadLink");
+        downloadLinkContainer.innerHTML = `<a href="${downloadUrl}" download>Download TikTok Video</a>`;
+    }
+
+    // Generate random circles with individual oscillation times
     for (let i = 0; i < 10; i++) {
         const circle = document.createElement('div');
         circle.classList.add('circle');
@@ -32,5 +62,3 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(circle);
     }
 });
-
-
