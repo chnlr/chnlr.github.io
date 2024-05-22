@@ -4,7 +4,7 @@
 
 /* Define custom font */
 @font-face {
-    font-family: 'professional';
+    font-family: 'Professional';
     src: url('https://yourgithubusername.github.io/path/to/professional.otf') format('truetype');
 }
 
@@ -52,7 +52,7 @@ body, html {
     margin-top: 20px;
     padding: 1em;
     display: block;
-    font-family: 'Funky', cursive; /* Use the custom 'Funky' font for the 'About' link */
+    font-family: 'Professional'; /* Use the custom 'Funky' font for the 'About' link */
     opacity: 0;
     transition: opacity 0.5s ease;
 }
