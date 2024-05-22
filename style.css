@@ -4,8 +4,8 @@
 
 /* Define custom font */
 @font-face {
-    font-family: 'Funky';
-    src: url('https://yourgithubusername.github.io/path/to/funky.ttf') format('truetype');
+    font-family: 'professional';
+    src: url('https://yourgithubusername.github.io/path/to/professional.otf') format('truetype');
 }
 
 body, html {
