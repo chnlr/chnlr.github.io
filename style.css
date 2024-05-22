@@ -1,75 +1,8 @@
-/* Importing the fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
-
-/* Define custom font */
-@font-face {
-    font-family: 'Funky';
-    src: url('https://yourgithubusername.github.io/path/to/funky.ttf') format('truetype');
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #c0c0c0;
-    font-family: 'Bebas Neue', sans-serif;
-    overflow: hidden;
-}
-
-.container {
-    text-align: center;
-}
-
-#title {
-    font-size: 6em;
-    color: #ffffff;
-    letter-spacing: 0.1em; /* Spread out the letters */
-    position: relative;
-    z-index: 1;
-    animation: glowFlash 1.5s infinite alternate;
-}
-
-@keyframes glowFlash {
-    from {
-        text-shadow: 0 0 10px #6e6e6e, 0 0 20px #6e6e6e, 0 0 30px #6e6e6e, 0 0 40px #6e6e6e;
-    }
-    to {
-        text-shadow: 0 0 20px #6e6e6e, 0 0 30px #6e6e6e, 0 0 40px #6e6e6e, 0 0 50px #6e6e6e;
-    }
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -150px;
-    width: 80px;
-    height: 100%;
-    background-color: #333;
-    display: flex;
-    flex-direction: column;
-    transition: left 0.5s ease;
-}
-
-.sidebar a {
-    color: #fff;
-    text-decoration: none;
-    margin-top: 20px;
-    padding: 1em;
-    display: block;
-    font-family: 'Funky', cursive; /* Use the custom 'Funky' font for the 'About' link */
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.sidebar a.visible {
-    opacity: 1.3;
-}
-
-.sidebar a:hover {
-    background-color: #575757;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("sidebar").style.left = "0";
+        setTimeout(function() {
+            document.querySelector(".sidebar a").classList.add("visible");
+        }, 500); // Fade in the link after the sidebar has slid in
+    }, 3000);
+});
