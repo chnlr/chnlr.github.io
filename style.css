@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 
+/* Define custom font */
+@font-face {
+    font-family: 'Professional';
+    src: url('https://yourgithubusername.github.io/path/to/professional.otf') format('opentype');
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -20,9 +26,9 @@ body, html {
 }
 
 #title {
-    font-size: 6em;
+    font-size: 4em;
     color: #ffffff;
-    letter-spacing: 0.1em; /* Spread out the letters */
+    letter-spacing: 0.05em; /* Slightly less spread out to match the smaller size */
     position: relative;
     z-index: 1;
 }
@@ -30,10 +36,10 @@ body, html {
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0; /* Adjusted to always visible */
-    width: 60px;
+    left: -75px; /* Start offscreen */
+    width: 75px;
     height: 100%;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.6); /* Solid color with 60% transparency */
     display: flex;
     flex-direction: column;
     transition: left 0.5s ease;
@@ -43,12 +49,16 @@ body, html {
     color: #fff;
     text-decoration: none;
     margin-top: 20px;
-    padding: 7px;
+    padding: 15px;
     display: block;
     font-family: 'Professional';
-    opacity: 1; /* Adjusted for visibility */
+    opacity: 1;
+    transition: text-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .sidebar a:hover {
-    background-color: #575757;
+    text-shadow: 0 0 5px rgba(74, 203, 207, 0.8),
+                 0 0 10px rgba(255, 255, 255, 0.8),
+                 0 0 15px rgba(123, 211, 234, 0.8),
+                 0 0 20px rgba(255, 255, 255, 0.8); /* Enhanced glow effect with multiple layers */
 }
