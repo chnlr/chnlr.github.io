@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 
+/* Define custom font */
+@font-face {
+    font-family: 'Funky';
+    src: url('https://yourgithubusername.github.io/path/to/funky.ttf') format('truetype');
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -55,9 +61,9 @@ body, html {
     margin-top: 20px;
     padding: 1em;
     display: block;
-    font-family: 'Reenie Beanie', cursive;
+    font-family: 'Funky', cursive; /* Use the custom 'Funky' font for the 'About' link */
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.5s ease;
 }
 
 .sidebar a.visible {
