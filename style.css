@@ -23,14 +23,21 @@ body, html {
 
 .container {
     text-align: center;
+    padding-bottom: 0; /* Reduce or remove padding at the bottom of the container */
 }
 
 #title {
     font-size: 4em;
     color: #ffffff;
-    letter-spacing: 0.05em; /* Slightly less spread out to match the smaller size */
-    position: relative;
-    z-index: 1;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px; /* Reduced margin to bring elements closer */
+}
+
+#depopImage {
+    width: 500px; /* Adjust size as needed */
+    height: auto;
+    display: block; /* Ensures the image is centered */
+    margin: -100px auto 0px auto; /* Reduces bottom margin */
 }
 
 .sidebar {
