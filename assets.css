@@ -1,41 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Assets</title>
-    <link rel="icon" href="infofav.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets.css">
-</head>
-<body>
-    <div class="top-menu">
-        <a href="https://chahanler.com/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-    </div>
-    <div class="content-wrapper">
-        <div class="header">
-            <h1>Custom Assets</h1>
-        </div>
-        <div class="content">
-            <div class="description-box">
-                <p>Transform your online presence with bespoke, visually captivating streaming assets. Each design is meticulously crafted, ensuring it uniquely enhances your brand. From inception to final touches, expect a swift and seamless delivery, ranging from just two days to a week.</p>
-            </div>
-            <div class="asset-gallery">
-                <img src="coffeetalk.png" alt="Coffeetalk Asset" onclick="openModal(this);">
-                <img src="username.png" alt="Username Asset" onclick="openModal(this);">
-                <div class="purchase-box">
-                    <p>You can buy these <a href="https://chahanler.gumroad.com/l/CoffeeTalk" target="_blank">here</a>.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div id="caption"></div>
-    </div>
-    <script src="app.js"></script>
-</body>
-</html>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.top-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: top 0.5s ease;
+}
+
+.top-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.top-menu a:hover {
+    background-color: rgba(68, 68, 68, 0.6);
+}
+
+.header {
+    width: 100%;
+    text-align: left;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.description-box{
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 80%;
+    text-align: center;
+}
+
+.purchase-box {
+    background-color: #92d084; /* Light pastel green background */
+    padding: 20px;
+    margin: 20px 0; /* Adds vertical margin for spacing */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 100%; /* Ensures it spans the full width of its container */
+    text-align: center; /* Centers the text inside the box */
+    display: flex; /* Uses flexbox to center the content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+}
+
+.asset-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap */
+    justify-content: space-around; /* Distributes space around items */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 80%; /* Adjust as necessary */
+    margin: 10px 0; /* Vertical margin for separation */
+}
+
+.asset-gallery img {
+    width: 45%; /* Adjust the width as necessary to fit side by side */
+    margin: 10px; /* Provides spacing around images */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 60px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
