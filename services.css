@@ -56,6 +56,13 @@ body, html {
     color: #666;
 }
 
+.service-box img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 10px 0; /* Adds vertical spacing above and below the image */
+}
+
 .sidebar {
     position: fixed;
     top: 0;
