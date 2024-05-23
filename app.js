@@ -9,5 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
     depopImage.addEventListener('click', function() {
         window.open('https://www.depop.com/chanlr/', '_blank'); // Open the link directly on click
         depopImage.src = 'clickdepop.gif'; // Change the image to GIF as feedback
+
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImage");
+            var captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+        
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
     });
 });
