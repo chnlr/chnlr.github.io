@@ -1,1 +1,40 @@
- 
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.container {
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    background-color: white;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.service-box {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.service-box h2 {
+    color: #333;
+}
+
+.service-box p {
+    text-align: left;
+    color: #666;
+}
