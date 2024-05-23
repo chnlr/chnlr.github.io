@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        document.getElementById('sidebar').style.left = '0px'; // Slide in sidebar
-    }, 500); // Delay can be adjusted or removed as per design needs
+    var depopImage = document.getElementById('depopImage');
+    depopImage.addEventListener('click', function() {
+        // Change to GIF on click and set a timeout to redirect
+        depopImage.src = 'clickdepop.gif';
+        setTimeout(function() {
+            window.location.href = 'https://www.depop.com/chanlr/';
+        }, 1400); // Delay for 1 second before redirecting
+    });
 });
