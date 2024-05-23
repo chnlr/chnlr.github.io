@@ -46,6 +46,30 @@ body, html {
     margin-bottom: 20px;
 }
 
+/* Define hover effects for service boxes with specific classes */
+.service-box.website:hover {
+    background-color: rgba(173, 216, 230, 0.5); /* Light pastel blue */
+}
+
+.service-box.streaming:hover {
+    background-color: rgba(255, 182, 193, 0.5); /* Light pastel red */
+}
+
+.service-box.reviews:hover {
+    background-color: rgba(144, 238, 144, 0.5); /* Light pastel green */
+}
+
+.service-box {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
 .service-box h2 {
     color: #333;
     font-family: 'Freeman', sans-serif;
