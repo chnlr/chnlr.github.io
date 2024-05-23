@@ -35,4 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeModal() {
         modal.style.display = "none";
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const streamingBox = document.querySelector('.streaming'); // Select the streaming assets box
+        streamingBox.addEventListener('click', function() {
+            window.location.href = '/assets'; // Redirect to the assets page
+        });
+    });
 });
