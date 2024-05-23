@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var sidebar = document.getElementById('sidebar');
-    sidebar.style.top = '-50px'; // Start hidden above the view
+    var topMenu = document.querySelector('.top-menu');
+    topMenu.style.top = '-60px';  // Start the menu slightly above the top to be fully hidden
     setTimeout(function() {
-        sidebar.style.top = '0'; // Slide down
-    }, 500);
+        topMenu.style.top = '0px'; // Slide down to show
+    }, 100);
 
     var depopImage = document.getElementById('depopImage');
     depopImage.addEventListener('click', function() {
