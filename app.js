@@ -1,27 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
     var topMenu = document.querySelector('.top-menu');
-    topMenu.style.top = '-60px';  // Start the menu slightly above the top to be fully hidden
+    topMenu.style.top = '-60px'; // Start hidden
     setTimeout(function() {
-        topMenu.style.top = '0px'; // Slide down to show
+        topMenu.style.top = '0'; // Slide down
     }, 100);
 
-    var depopImage = document.getElementById('depopImage');
-    depopImage.addEventListener('click', function() {
-        window.open('https://www.depop.com/chanlr/', '_blank'); // Open the link directly on click
-        depopImage.src = 'clickdepop.gif'; // Change the image to GIF as feedback
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalImage");
+    var captionText = document.getElementById("caption");
+    var images = document.querySelectorAll('.asset-gallery img');
 
-        function openModal(img) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("modalImage");
-            var captionText = document.getElementById("caption");
+    images.forEach(img => {
+        img.onclick = function() {
             modal.style.display = "block";
-            modalImg.src = img.src;
-            captionText.innerHTML = img.alt;
-        }
-        
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
         }
     });
+
+    var closeBtn = document.querySelector('.close');
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close modal on pressing ESC
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 27) {
+            modal.style.display = "none";
+        }
+    };
 });
