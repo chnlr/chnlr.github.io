@@ -63,27 +63,27 @@ body, html {
     margin: 10px 0; /* Adds vertical spacing above and below the image */
 }
 
-.sidebar {
+.top-menu {
     position: fixed;
-    top: 0;
+    top: 0; /* Initial position should be 0 but will be set to -50px by JS initially */
     width: 100%;
-    height: 50px;
-    background-color: rgba(51, 51, 51, 0.6);
+    background-color: rgba(51, 51, 51, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: top 0.5s ease;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: top 0.5s ease; /* Smooth transition for sliding effect */
 }
 
-.sidebar a {
+.top-menu a {
     color: #fff;
     text-decoration: none;
-    padding: 10px;
-    font-family: 'Professional';
-    transition: color 0.3s ease;
+    padding: 15px 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
-.sidebar a:hover {
-    color: #ddd;
+.top-menu a:hover {
+    background-color: rgba(68, 68, 68, 0.6);
 }
