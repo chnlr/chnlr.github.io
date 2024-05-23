@@ -1,35 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var topMenu = document.querySelector('.top-menu');
-    topMenu.style.top = '-60px';  // Start the menu slightly above the top to be fully hidden
-    setTimeout(function() {
-        topMenu.style.top = '0px'; // Slide down to show
-    }, 100);
+    var images = document.querySelectorAll('.asset-gallery img');
+    images.forEach(function(img) {
+        img.addEventListener('click', function() {
+            openModal(img);
+        });
+    });
 
     var modal = document.getElementById("myModal");
     var modalImg = document.getElementById("modalImage");
-    var images = document.querySelectorAll('.asset-gallery img');
-    var body = document.querySelector('body');
+    // Remove the caption variable if not needed
+    var closeModalButton = document.querySelector('.close');
 
-    images.forEach(img => {
-        img.onclick = function() {
-            modal.style.display = "flex";
-            modalImg.src = this.src;
-            body.classList.add('blur-active'); // Add class to activate blur
+    function openModal(img) {
+        modal.style.display = "flex"; // Change to flex to center the image
+        modalImg.src = img.src;
+        // Remove or comment out the next line if you don't want to show the caption
+        // captionText.innerHTML = img.alt; 
+    }
+
+    closeModalButton.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
         }
     });
 
-    var closeBtn = document.querySelector('.close');
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-        body.classList.remove('blur-active'); // Remove class to deactivate blur
-    }
-
-    // Close modal on pressing ESC
-    document.onkeydown = function(evt) {
-        evt = evt || window.event;
-        if (evt.keyCode == 27) {
-            modal.style.display = "none";
-            body.classList.remove('blur-active'); // Remove class to deactivate blur
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            closeModal();
         }
-    };
+    });
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
 });
