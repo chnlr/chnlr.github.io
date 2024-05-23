@@ -1,0 +1,68 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.top-menu {
+    position: fixed;
+    top: 0; /* Initial position should be 0 but will be set to -50px by JS initially */
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: top 0.5s ease; /* Smooth transition for sliding effect */
+}
+
+.top-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.top-menu a:hover {
+    background-color: rgba(68, 68, 68, 0.6);
+}
+
+.header {
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    width: 90%;
+    align-items: flex-start; /* Aligns items at the start of the flex container */
+}
+
+.description {
+    flex: 1; /* Takes up 1/2 of the flex container */
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+.asset-gallery {
+    flex: 1; /* Takes up the other 1/2 of the flex container */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap within the container */
+    justify-content: center; /* Center the assets within the gallery */
+}
+
+.asset-gallery img {
+    max-width: 100%; /* Ensure images are not bigger than their container */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Adds shadow for better visibility */
+}
