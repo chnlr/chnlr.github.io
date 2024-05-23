@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     depopImage.addEventListener('click', function() {
         depopImage.src = 'clickdepop.gif';
         setTimeout(function() {
-            window.location.href = 'https://www.depop.com/chanlr/';
+            window.open('https://www.depop.com/chanlr/', '_blank');
         }, 1400);
     });
 });
