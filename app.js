@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var depopImage = document.getElementById('depopImage');
     depopImage.addEventListener('click', function() {
-        depopImage.src = 'clickdepop.gif';
-        setTimeout(function() {
-            window.open('https://www.depop.com/chanlr/', '_blank');
-        }, 1400);
+        window.open('https://www.depop.com/chanlr/', '_blank'); // Open the link directly on click
+        depopImage.src = 'clickdepop.gif'; // Change the image to GIF as feedback
     });
 });
