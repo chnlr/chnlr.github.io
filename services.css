@@ -1,36 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services Offered</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="services.css">
-</head>
-<body>
-    <div id="sidebar" class="sidebar">
-        <a href="https://chahanler.com/" class="Professional">Home</a>
-        <a href="/about" class="Professional">About</a>
-    </div>
-    <div class="content-wrapper">
-    <div class="container">
-        <h1 class="header">What I Can Work On For You</h1>
-        <div class="service-box">
-            <h2>Website Design</h2>
-            <p>Imagine your ideal website brought to life with meticulous design and precision. Whether you're looking for a sleek, minimalist layout or a dynamic, feature-rich interface, I work closely with you to create a custom-designed website that perfectly matches your vision. Expect fast, efficient service that brings your digital presence to the forefront swiftly.</p>
-        </div>
-        <div class="service-box">
-            <h2>Streaming Assets</h2>
-            <p>Enhance your streaming presence with custom assets designed specifically for platforms like Twitch, Kik, and YouTube. From overlays and logos to full stream packages, my services cater to creating unique and visually appealing designs that resonate with your personal or brand identity. Quick delivery within 1-2 days ensures you're ready to broadcast with a new look almost immediately.</p>
-        </div>
-        <div class="service-box">
-            <h2>Reviews</h2>
-            <p>Boost your business's online reputation effectively. I provide tailored review posting services across platforms like Google Maps. Whether you seek to enhance your image with positive reviews or need nuanced, detailed critiques with custom content such as photos, I offer flexible solutions. Each review is crafted to meet your specific needs, providing genuine, trustworthy feedback to your prospective clients.</p>
-        </div>
-    </div>
-</div>
-    <script src="app.js"></script>
-</body>
-</html>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block; /* Changed from flex to block */
+    background-color: #f4f4f4;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Center horizontally */
+    height: calc(100% - 50px); /* Adjust height taking sidebar into account */
+    padding-top: 35px; /* Offset for the height of the sidebar */
+}
+
+.container {
+    width: 85%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-top: 40px; /* Adjust this value as needed, smaller than before because of flexbox */
+}
+
+.header {
+    margin-bottom: 20px;
+    font-family: 'Freeman', sans-serif;
+}
+
+.service-box {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.85); /* Matching transparency for individual boxes */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.service-box h2 {
+    color: #333;
+    font-family: 'Freeman', sans-serif;
+}
+
+.service-box p {
+    text-align: center; /* Center-align the text */
+    color: #666;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(51, 51, 51, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.5s ease;
+    z-index: 1000;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Professional';
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #ddd;
+}
