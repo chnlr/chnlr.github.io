@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var images = document.querySelectorAll('.asset-gallery img');
-    images.forEach(function(img) {
-        img.addEventListener('click', function() {
-            openModal(img);
-        });
+    var depopImage = document.getElementById('depopImage');
+    depopImage.addEventListener('click', function() {
+        depopImage.src = 'clickdepop.gif'; // Change the image to the GIF
+        setTimeout(function() {
+            window.open('https://www.depop.com/chanlr/', '_blank'); // Open the link in a new tab after 1.4 seconds
+        }, 1400);
     });
 
     var modal = document.getElementById("myModal");
