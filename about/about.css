@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @font-face {
-    font-family: 'Giyaste';
+    font-family: 'Neue Regrade';
     src: url('../fonts/Neue/Neue Regrade Bold Italic.otf') format('opentype');
 }
 
@@ -54,7 +54,7 @@ body, html {
 }
 
 .description-box {
-    font-family: 'Giyaste', sans-serif;
+    font-family: 'Neue Regrade', sans-serif;
     font-size: 110%;
     background-color: #fff;
     padding: 20px;
