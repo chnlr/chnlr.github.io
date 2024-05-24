@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @font-face {
     font-family: 'Neue Regrade';
-    src: url('../fonts/Neue/Neue Regrade Bold Italic.otf') format('truetype');
+    src: url('/fonts/Neue/Neue Regrade Bold Italic.otf') format('truetype');
 }
-
 
 body, html {
     margin: 0;
@@ -65,7 +64,7 @@ body, html {
     text-align: left;
 }
 
-.asset-gallery {
+.asset-gallery, .asset-gallery2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -76,7 +75,7 @@ body, html {
     margin-bottom: 20px;
 }
 
-.asset-gallery img {
+.asset-gallery img, .asset-gallery2 img {
     width: 50%;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -86,7 +85,7 @@ body, html {
 .purchase-box {
     width: 70%;
     background-color: #92d084;
-    padding:px;
+    padding: 10px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     text-align: center;
