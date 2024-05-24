@@ -59,7 +59,6 @@ body, html {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     width: 100%;
-    height: 90%;
     text-align: left;
 }
 
@@ -130,7 +129,7 @@ body, html {
     cursor: pointer;
 }
 
-/* Mobile Styles */
+/* Media query for mobile devices */
 @media (max-width: 768px) {
     .content-wrapper {
         flex-direction: column;
@@ -138,15 +137,15 @@ body, html {
     }
 
     .left-column, .right-column {
+        width: 100%;
         padding: 10px;
     }
 
-    .description-box {
+    .asset-gallery img {
         width: 100%;
-        margin-bottom: 20px;
     }
 
-    .asset-gallery, .asset-gallery2 {
+    .purchase-box {
         width: 100%;
     }
 }
