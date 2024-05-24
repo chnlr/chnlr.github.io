@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: 'Giyaste';
+    src: url('assets/fonts/giyaste.otf') format('opentype');
+}
+
 
 body, html {
     margin: 0;
@@ -45,16 +50,17 @@ body, html {
 
 .left-column, .right-column {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
 }
 
 .description-box {
+    font-family: 'Giyaste', sans-serif;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     width: 80%;
-    height: 100%;
+    height: 90%;
     text-align: left;
 }
 
