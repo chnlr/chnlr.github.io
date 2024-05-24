@@ -36,41 +36,37 @@ body, html {
     background-color: rgba(68, 68, 68, 0.6);
 }
 
-.header {
-    width: 100%;
-    text-align: left;
-    padding-top: 50px;
-    padding-left: 20px;
+.content-wrapper {
+    display: flex;
+    width: 90%;
+    margin-top: 100px;
+    justify-content: space-between;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    align-items: center;
-    margin-top: 100px;
+.left-column, .right-column {
+    flex: 1;
+    padding: 20px;
 }
 
 .description-box {
     background-color: #fff;
     padding: 20px;
-    margin: 10px 0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     width: 80%;
-    text-align: center;
+    height: 100%;
+    text-align: left;
 }
 
 .asset-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content: center;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    width: 80%;
-    margin: 10px 0;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .asset-gallery img {
@@ -81,16 +77,13 @@ body, html {
 }
 
 .purchase-box {
+    width: 100%;
     background-color: #92d084;
-    padding: 20px;
-    margin: 20px 0;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    width: 100%;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 10px;
 }
 
 .modal {
