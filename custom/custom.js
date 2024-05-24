@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var modalImg = document.getElementById("modalImage");
     var closeModalButton = document.querySelector('.close');
 
-    // Add click events to all images in the asset gallery for modal display
-    document.querySelectorAll('.asset-gallery img').forEach(function(img) {
+    // Add click events to all images in both asset galleries for modal display
+    document.querySelectorAll('.asset-gallery img, .asset-gallery2 img').forEach(function(img) {
         img.addEventListener('click', function() {
             openModal(img);
         });
