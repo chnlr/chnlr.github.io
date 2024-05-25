@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var closeModalButton = document.querySelector('.close');
 
     // Add click events to all images in both asset galleries for modal display
-    document.querySelectorAll('.asset-gallery img, .asset-gallery2 img').forEach(function(img) {
+    document.querySelectorAll('.asset-gallery img, .asset-gallery2 img, .asset-gallery3 img').forEach(function(img) {
         img.addEventListener('click', function() {
             openModal(img);
         });
